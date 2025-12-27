@@ -4,6 +4,7 @@ node_modules/
 # Cloud cover data cache
 data/cloud-cover/daily-cache/
 data/cloud-cover/*.nc
+data/cloud-cover/**/*.nc
 
 # Local/temp files
 README.local.md
