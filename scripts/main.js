@@ -283,6 +283,12 @@ function createPoiIcons() {
     });
 
     return {
+        home: svgIcon(
+            `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M3 11.5L12 4l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z" fill="#f39c12" stroke="#111827" stroke-width="1"/>
+              <rect x="10" y="16" width="4" height="5" fill="#0b111f"/>
+            </svg>`
+        ),
         town: svgIcon(
             `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
               <path d="M3 11.5L12 4l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z" fill="#f39c12" stroke="#111827" stroke-width="1"/>
@@ -502,6 +508,16 @@ async function initMap() {
             );
             map.fitBounds(bounds);
         }
+    }
+
+    // Create marker for URL-specified home location
+    if (urlHome) {
+        new google.maps.Marker({
+            map,
+            position: { lat: urlHome.lat, lng: urlHome.lon },
+            title: urlHome.name || 'Home',
+            icon: poiIcons.home
+        });
     }
 
     // Update locked location links
