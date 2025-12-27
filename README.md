@@ -1,21 +1,22 @@
-# Eclipse 2026 Spain
+# Eclipse Maps
 
-Interactive map of the 2026 total solar eclipse path over Spain.
+Interactive maps of total solar eclipse paths with cloud climatology.
 
-**Live:** https://trieloff.github.io/eclipse/
+**Live:** https://trieloff.github.io/eclipse/2026/spain.html
 
-**Demo with home location:** [View from El Poal](https://trieloff.github.io/eclipse/?homeLat=41.68&homeLon=0.85) – shows driving distances from your location
+**Demo with home location:** [View from El Poal](https://trieloff.github.io/eclipse/2026/spain.html?homeLat=41.68&homeLon=0.85) – shows driving distances from your location
 
 ## Data Files
 
 - `data/eclipse-{year}.json` - Eclipse path and Besselian elements from NASA GSFC
 - `data/cloud-{year}.json` - Cloud cover climatology grid from CM SAF/EUMETSAT
 
-Currently available: 2026, 2027
+Currently available: 2026, 2027, 2028, 2030
 
 ## Code Structure
 
-- `index.html` - Single-page app with Google Maps, totality polygon, and duration calculator
+- `index.html` - Landing page with links to regional maps
+- `2026/`, `2027/` - Regional eclipse viewer pages
 - `scripts/eclipse-calculator.js` - Besselian-element based totality calculator
 - `scripts/fetch-eclipse-path.js` - Fetches NASA GSFC eclipse path data
 - `scripts/build-cloud-climatology.js` - Builds cloud cover climatology from EUMETSAT
