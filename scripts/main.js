@@ -629,8 +629,7 @@ async function initMap() {
         if (poiData?.points?.length) {
             // Update home if not set from URL
             if (!homePoi) {
-                const poiHome = poiData.points.find(point => point.category === 'home')
-                    || poiData.points[0];
+                const poiHome = poiData.points.find(point => point.category === 'home');
                 if (poiHome) {
                     homePoi = poiHome;
                     hasHome = true;

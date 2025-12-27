@@ -23,7 +23,7 @@ Currently available: 2026, 2027, 2028, 2030
 
 ## UI Behavior
 
-- Clicking a location locks it and shows links for driving directions (from a POI named `Home-POI` or the first POI), Shadowmap, and Airbnb (Aug 11–13, 2026).
+- Clicking a location locks it and shows links for driving directions (from a POI with `category: home`), Shadowmap, and Airbnb.
 
 ## Development
 
