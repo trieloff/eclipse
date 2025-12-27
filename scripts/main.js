@@ -376,7 +376,12 @@ function createCloudOverlayClass(maxCloud) {
             const boundsCheck = bounds;
             this.tiles.forEach(tile => {
                 if (!boundsCheck.contains(tile.location)) return;
-                const opacity = Math.min(0.85, Math.max(0.05, tile.value / maxCloud));
+                const t = Math.min(1, Math.max(0, tile.value / (maxCloud * 0.75)));
+                // Interpolate from transparent yellow to opaque navy blue
+                const r = Math.round(245 + t * (28 - 245));
+                const g = Math.round(158 + t * (39 - 158));
+                const b = Math.round(11 + t * (59 - 11));
+                const a = 0.05 + t * (1.0 - 0.05);
                 const nw = projection.fromLatLngToDivPixel(new google.maps.LatLng(tile.bounds.north, tile.bounds.west));
                 const se = projection.fromLatLngToDivPixel(new google.maps.LatLng(tile.bounds.south, tile.bounds.east));
                 const x = nw.x - sw.x;
@@ -384,7 +389,7 @@ function createCloudOverlayClass(maxCloud) {
                 const w = se.x - nw.x;
                 const h = se.y - nw.y;
                 if (w <= 0 || h <= 0) return;
-                ctx.fillStyle = `rgba(245, 158, 11, ${opacity.toFixed(3)})`;
+                ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${a.toFixed(3)})`;
                 ctx.fillRect(x, y, w, h);
             });
 
