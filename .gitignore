@@ -11,3 +11,8 @@ README.local.md
 tmp-*.png
 *.log
 Spain.svg
+
+# Intermediate/raw data files
+data/cities.json
+data/nasa-path-raw.json
+data/eclipse-path.json
