@@ -1,0 +1,4018 @@
+{
+  "eclipse": {
+    "date": "2030-11-25",
+    "source": "NASA GSFC",
+    "attribution": "Eclipse Predictions by Fred Espenak, NASA's GSFC",
+    "license": "Permission is freely granted to reproduce this data when accompanied by the acknowledgment above.",
+    "fetchedAt": "2025-12-27T19:22:27.150Z",
+    "url": "https://eclipse.gsfc.nasa.gov/SEpath/SEpath2001/SE2030Nov25Tpath.html"
+  },
+  "path": [
+    {
+      "time": "2030-11-25T05:16:00Z",
+      "northern": {
+        "lat": -19.096666666666668,
+        "lon": 10.223333333333333
+      },
+      "southern": {
+        "lat": -18.421666666666667,
+        "lon": 5.66
+      },
+      "central": {
+        "lat": -18.88,
+        "lon": 8.228333333333333
+      },
+      "ratio": 1.032,
+      "sunAltitude": 7,
+      "sunAzimuth": 110,
+      "pathWidth": 126,
+      "duration": 102.2
+    },
+    {
+      "time": "2030-11-25T05:18:00Z",
+      "northern": {
+        "lat": -21.118333333333332,
+        "lon": 14.863333333333333
+      },
+      "southern": {
+        "lat": -21.2,
+        "lon": 12.073333333333334
+      },
+      "central": {
+        "lat": -21.185,
+        "lon": 13.518333333333333
+      },
+      "ratio": 1.034,
+      "sunAltitude": 13,
+      "sunAzimuth": 108,
+      "pathWidth": 133,
+      "duration": 112.6
+    },
+    {
+      "time": "2030-11-25T05:20:00Z",
+      "northern": {
+        "lat": -22.591666666666665,
+        "lon": 18.10333333333333
+      },
+      "southern": {
+        "lat": -22.898333333333333,
+        "lon": 15.761666666666667
+      },
+      "central": {
+        "lat": -22.76,
+        "lon": 16.96
+      },
+      "ratio": 1.035,
+      "sunAltitude": 17,
+      "sunAzimuth": 106,
+      "pathWidth": 138,
+      "duration": 119.9
+    },
+    {
+      "time": "2030-11-25T05:22:00Z",
+      "northern": {
+        "lat": -23.816666666666666,
+        "lon": 20.723333333333333
+      },
+      "southern": {
+        "lat": -24.251666666666665,
+        "lon": 18.611666666666668
+      },
+      "central": {
+        "lat": -24.045,
+        "lon": 19.686666666666667
+      },
+      "ratio": 1.036,
+      "sunAltitude": 20,
+      "sunAzimuth": 104,
+      "pathWidth": 142,
+      "duration": 126.1
+    },
+    {
+      "time": "2030-11-25T05:24:00Z",
+      "northern": {
+        "lat": -24.886666666666667,
+        "lon": 22.976666666666667
+      },
+      "southern": {
+        "lat": -25.413333333333334,
+        "lon": 21.01
+      },
+      "central": {
+        "lat": -25.16,
+        "lon": 22.008333333333333
+      },
+      "ratio": 1.037,
+      "sunAltitude": 23,
+      "sunAzimuth": 103,
+      "pathWidth": 145,
+      "duration": 131.5
+    },
+    {
+      "time": "2030-11-25T05:26:00Z",
+      "northern": {
+        "lat": -25.851666666666667,
+        "lon": 24.981666666666666
+      },
+      "southern": {
+        "lat": -26.45,
+        "lon": 23.115
+      },
+      "central": {
+        "lat": -26.158333333333335,
+        "lon": 24.061666666666667
+      },
+      "ratio": 1.037,
+      "sunAltitude": 25,
+      "sunAzimuth": 102,
+      "pathWidth": 147,
+      "duration": 136.5
+    },
+    {
+      "time": "2030-11-25T05:28:00Z",
+      "northern": {
+        "lat": -26.736666666666668,
+        "lon": 26.805
+      },
+      "southern": {
+        "lat": -27.393333333333334,
+        "lon": 25.015
+      },
+      "central": {
+        "lat": -27.071666666666665,
+        "lon": 25.921666666666667
+      },
+      "ratio": 1.038,
+      "sunAltitude": 28,
+      "sunAzimuth": 100,
+      "pathWidth": 149,
+      "duration": 141.1
+    },
+    {
+      "time": "2030-11-25T05:30:00Z",
+      "northern": {
+        "lat": -27.556666666666665,
+        "lon": 28.488333333333333
+      },
+      "southern": {
+        "lat": -28.266666666666666,
+        "lon": 26.76
+      },
+      "central": {
+        "lat": -27.918333333333333,
+        "lon": 27.635
+      },
+      "ratio": 1.039,
+      "sunAltitude": 30,
+      "sunAzimuth": 99,
+      "pathWidth": 151,
+      "duration": 145.5
+    },
+    {
+      "time": "2030-11-25T05:32:00Z",
+      "northern": {
+        "lat": -28.325,
+        "lon": 30.061666666666667
+      },
+      "southern": {
+        "lat": -29.08,
+        "lon": 28.385
+      },
+      "central": {
+        "lat": -28.708333333333332,
+        "lon": 29.233333333333334
+      },
+      "ratio": 1.039,
+      "sunAltitude": 32,
+      "sunAzimuth": 98,
+      "pathWidth": 153,
+      "duration": 149.6
+    },
+    {
+      "time": "2030-11-25T05:34:00Z",
+      "northern": {
+        "lat": -29.048333333333332,
+        "lon": 31.545
+      },
+      "southern": {
+        "lat": -29.845,
+        "lon": 29.913333333333334
+      },
+      "central": {
+        "lat": -29.451666666666668,
+        "lon": 30.74
+      },
+      "ratio": 1.04,
+      "sunAltitude": 33,
+      "sunAzimuth": 97,
+      "pathWidth": 155,
+      "duration": 153.5
+    },
+    {
+      "time": "2030-11-25T05:36:00Z",
+      "northern": {
+        "lat": -29.735,
+        "lon": 32.955
+      },
+      "southern": {
+        "lat": -30.568333333333335,
+        "lon": 31.361666666666668
+      },
+      "central": {
+        "lat": -30.156666666666666,
+        "lon": 32.16833333333334
+      },
+      "ratio": 1.04,
+      "sunAltitude": 35,
+      "sunAzimuth": 95,
+      "pathWidth": 156,
+      "duration": 157.2
+    },
+    {
+      "time": "2030-11-25T05:38:00Z",
+      "northern": {
+        "lat": -30.386666666666667,
+        "lon": 34.303333333333335
+      },
+      "southern": {
+        "lat": -31.256666666666668,
+        "lon": 32.745
+      },
+      "central": {
+        "lat": -30.826666666666668,
+        "lon": 33.53333333333333
+      },
+      "ratio": 1.041,
+      "sunAltitude": 37,
+      "sunAzimuth": 94,
+      "pathWidth": 157,
+      "duration": 160.8
+    },
+    {
+      "time": "2030-11-25T05:40:00Z",
+      "northern": {
+        "lat": -31.01,
+        "lon": 35.598333333333336
+      },
+      "southern": {
+        "lat": -31.911666666666665,
+        "lon": 34.071666666666665
+      },
+      "central": {
+        "lat": -31.465,
+        "lon": 34.845
+      },
+      "ratio": 1.041,
+      "sunAltitude": 38,
+      "sunAzimuth": 93,
+      "pathWidth": 158,
+      "duration": 164.3
+    },
+    {
+      "time": "2030-11-25T05:42:00Z",
+      "northern": {
+        "lat": -31.606666666666666,
+        "lon": 36.846666666666664
+      },
+      "southern": {
+        "lat": -32.538333333333334,
+        "lon": 35.35166666666667
+      },
+      "central": {
+        "lat": -32.07666666666667,
+        "lon": 36.108333333333334
+      },
+      "ratio": 1.041,
+      "sunAltitude": 40,
+      "sunAzimuth": 91,
+      "pathWidth": 159,
+      "duration": 167.6
+    },
+    {
+      "time": "2030-11-25T05:44:00Z",
+      "northern": {
+        "lat": -32.17666666666667,
+        "lon": 38.056666666666665
+      },
+      "southern": {
+        "lat": -33.138333333333335,
+        "lon": 36.59
+      },
+      "central": {
+        "lat": -32.66166666666667,
+        "lon": 37.333333333333336
+      },
+      "ratio": 1.042,
+      "sunAltitude": 41,
+      "sunAzimuth": 90,
+      "pathWidth": 160,
+      "duration": 170.8
+    },
+    {
+      "time": "2030-11-25T05:46:00Z",
+      "northern": {
+        "lat": -32.72666666666667,
+        "lon": 39.233333333333334
+      },
+      "southern": {
+        "lat": -33.71666666666667,
+        "lon": 37.795
+      },
+      "central": {
+        "lat": -33.225,
+        "lon": 38.52333333333333
+      },
+      "ratio": 1.042,
+      "sunAltitude": 43,
+      "sunAzimuth": 88,
+      "pathWidth": 161,
+      "duration": 173.8
+    },
+    {
+      "time": "2030-11-25T05:48:00Z",
+      "northern": {
+        "lat": -33.255,
+        "lon": 40.38
+      },
+      "southern": {
+        "lat": -34.27166666666667,
+        "lon": 38.968333333333334
+      },
+      "central": {
+        "lat": -33.766666666666666,
+        "lon": 39.68333333333333
+      },
+      "ratio": 1.043,
+      "sunAltitude": 44,
+      "sunAzimuth": 87,
+      "pathWidth": 162,
+      "duration": 176.8
+    },
+    {
+      "time": "2030-11-25T05:50:00Z",
+      "northern": {
+        "lat": -33.763333333333335,
+        "lon": 41.5
+      },
+      "southern": {
+        "lat": -34.805,
+        "lon": 40.115
+      },
+      "central": {
+        "lat": -34.288333333333334,
+        "lon": 40.81666666666667
+      },
+      "ratio": 1.043,
+      "sunAltitude": 45,
+      "sunAzimuth": 85,
+      "pathWidth": 163,
+      "duration": 179.7
+    },
+    {
+      "time": "2030-11-25T05:52:00Z",
+      "northern": {
+        "lat": -34.25333333333333,
+        "lon": 42.598333333333336
+      },
+      "southern": {
+        "lat": -35.321666666666665,
+        "lon": 41.23833333333334
+      },
+      "central": {
+        "lat": -34.79,
+        "lon": 41.92666666666667
+      },
+      "ratio": 1.043,
+      "sunAltitude": 47,
+      "sunAzimuth": 84,
+      "pathWidth": 163,
+      "duration": 182.4
+    },
+    {
+      "time": "2030-11-25T05:54:00Z",
+      "northern": {
+        "lat": -34.72833333333333,
+        "lon": 43.67666666666667
+      },
+      "southern": {
+        "lat": -35.818333333333335,
+        "lon": 42.34166666666667
+      },
+      "central": {
+        "lat": -35.276666666666664,
+        "lon": 43.01833333333333
+      },
+      "ratio": 1.043,
+      "sunAltitude": 48,
+      "sunAzimuth": 82,
+      "pathWidth": 164,
+      "duration": 185.1
+    },
+    {
+      "time": "2030-11-25T05:56:00Z",
+      "northern": {
+        "lat": -35.185,
+        "lon": 44.736666666666665
+      },
+      "southern": {
+        "lat": -36.29833333333333,
+        "lon": 43.428333333333335
+      },
+      "central": {
+        "lat": -35.745,
+        "lon": 44.09
+      },
+      "ratio": 1.044,
+      "sunAltitude": 49,
+      "sunAzimuth": 81,
+      "pathWidth": 165,
+      "duration": 187.7
+    },
+    {
+      "time": "2030-11-25T05:58:00Z",
+      "northern": {
+        "lat": -35.626666666666665,
+        "lon": 45.78
+      },
+      "southern": {
+        "lat": -36.763333333333335,
+        "lon": 44.498333333333335
+      },
+      "central": {
+        "lat": -36.196666666666665,
+        "lon": 45.14833333333333
+      },
+      "ratio": 1.044,
+      "sunAltitude": 50,
+      "sunAzimuth": 79,
+      "pathWidth": 165,
+      "duration": 190.2
+    },
+    {
+      "time": "2030-11-25T06:00:00Z",
+      "northern": {
+        "lat": -36.053333333333335,
+        "lon": 46.81166666666667
+      },
+      "southern": {
+        "lat": -37.211666666666666,
+        "lon": 45.555
+      },
+      "central": {
+        "lat": -36.635,
+        "lon": 46.19166666666667
+      },
+      "ratio": 1.044,
+      "sunAltitude": 51,
+      "sunAzimuth": 77,
+      "pathWidth": 166,
+      "duration": 192.6
+    },
+    {
+      "time": "2030-11-25T06:02:00Z",
+      "northern": {
+        "lat": -36.46666666666667,
+        "lon": 47.83
+      },
+      "southern": {
+        "lat": -37.645,
+        "lon": 46.60166666666667
+      },
+      "central": {
+        "lat": -37.05833333333333,
+        "lon": 47.223333333333336
+      },
+      "ratio": 1.044,
+      "sunAltitude": 53,
+      "sunAzimuth": 75,
+      "pathWidth": 166,
+      "duration": 194.9
+    },
+    {
+      "time": "2030-11-25T06:04:00Z",
+      "northern": {
+        "lat": -36.865,
+        "lon": 48.83833333333333
+      },
+      "southern": {
+        "lat": -38.065,
+        "lon": 47.63666666666667
+      },
+      "central": {
+        "lat": -37.46666666666667,
+        "lon": 48.245
+      },
+      "ratio": 1.045,
+      "sunAltitude": 54,
+      "sunAzimuth": 73,
+      "pathWidth": 166,
+      "duration": 197.1
+    },
+    {
+      "time": "2030-11-25T06:06:00Z",
+      "northern": {
+        "lat": -37.251666666666665,
+        "lon": 49.83833333333333
+      },
+      "southern": {
+        "lat": -38.47,
+        "lon": 48.663333333333334
+      },
+      "central": {
+        "lat": -37.861666666666665,
+        "lon": 49.25833333333333
+      },
+      "ratio": 1.045,
+      "sunAltitude": 55,
+      "sunAzimuth": 71,
+      "pathWidth": 167,
+      "duration": 199.2
+    },
+    {
+      "time": "2030-11-25T06:08:00Z",
+      "northern": {
+        "lat": -37.625,
+        "lon": 50.83
+      },
+      "southern": {
+        "lat": -38.861666666666665,
+        "lon": 49.68333333333333
+      },
+      "central": {
+        "lat": -38.245,
+        "lon": 50.265
+      },
+      "ratio": 1.045,
+      "sunAltitude": 56,
+      "sunAzimuth": 69,
+      "pathWidth": 167,
+      "duration": 201.3
+    },
+    {
+      "time": "2030-11-25T06:10:00Z",
+      "northern": {
+        "lat": -37.985,
+        "lon": 51.815
+      },
+      "southern": {
+        "lat": -39.24,
+        "lon": 50.69833333333333
+      },
+      "central": {
+        "lat": -38.615,
+        "lon": 51.263333333333335
+      },
+      "ratio": 1.045,
+      "sunAltitude": 57,
+      "sunAzimuth": 67,
+      "pathWidth": 167,
+      "duration": 203.2
+    },
+    {
+      "time": "2030-11-25T06:12:00Z",
+      "northern": {
+        "lat": -38.333333333333336,
+        "lon": 52.79333333333334
+      },
+      "southern": {
+        "lat": -39.60666666666667,
+        "lon": 51.70666666666666
+      },
+      "central": {
+        "lat": -38.971666666666664,
+        "lon": 52.25833333333333
+      },
+      "ratio": 1.045,
+      "sunAltitude": 57,
+      "sunAzimuth": 65,
+      "pathWidth": 168,
+      "duration": 205.1
+    },
+    {
+      "time": "2030-11-25T06:14:00Z",
+      "northern": {
+        "lat": -38.67,
+        "lon": 53.76833333333333
+      },
+      "southern": {
+        "lat": -39.96,
+        "lon": 52.711666666666666
+      },
+      "central": {
+        "lat": -39.31666666666667,
+        "lon": 53.24666666666667
+      },
+      "ratio": 1.045,
+      "sunAltitude": 58,
+      "sunAzimuth": 63,
+      "pathWidth": 168,
+      "duration": 206.9
+    },
+    {
+      "time": "2030-11-25T06:16:00Z",
+      "northern": {
+        "lat": -38.99333333333333,
+        "lon": 54.73833333333333
+      },
+      "southern": {
+        "lat": -40.30166666666667,
+        "lon": 53.71333333333333
+      },
+      "central": {
+        "lat": -39.64833333333333,
+        "lon": 54.233333333333334
+      },
+      "ratio": 1.046,
+      "sunAltitude": 59,
+      "sunAzimuth": 61,
+      "pathWidth": 168,
+      "duration": 208.6
+    },
+    {
+      "time": "2030-11-25T06:18:00Z",
+      "northern": {
+        "lat": -39.306666666666665,
+        "lon": 55.70666666666666
+      },
+      "southern": {
+        "lat": -40.63166666666667,
+        "lon": 54.71333333333333
+      },
+      "central": {
+        "lat": -39.97,
+        "lon": 55.21666666666667
+      },
+      "ratio": 1.046,
+      "sunAltitude": 60,
+      "sunAzimuth": 58,
+      "pathWidth": 168,
+      "duration": 210.2
+    },
+    {
+      "time": "2030-11-25T06:20:00Z",
+      "northern": {
+        "lat": -39.608333333333334,
+        "lon": 56.67166666666667
+      },
+      "southern": {
+        "lat": -40.94833333333333,
+        "lon": 55.711666666666666
+      },
+      "central": {
+        "lat": -40.28,
+        "lon": 56.19833333333333
+      },
+      "ratio": 1.046,
+      "sunAltitude": 61,
+      "sunAzimuth": 56,
+      "pathWidth": 169,
+      "duration": 211.7
+    },
+    {
+      "time": "2030-11-25T06:22:00Z",
+      "northern": {
+        "lat": -39.9,
+        "lon": 57.63666666666667
+      },
+      "southern": {
+        "lat": -41.255,
+        "lon": 56.708333333333336
+      },
+      "central": {
+        "lat": -40.57833333333333,
+        "lon": 57.178333333333335
+      },
+      "ratio": 1.046,
+      "sunAltitude": 62,
+      "sunAzimuth": 53,
+      "pathWidth": 169,
+      "duration": 213.1
+    },
+    {
+      "time": "2030-11-25T06:24:00Z",
+      "northern": {
+        "lat": -40.18,
+        "lon": 58.598333333333336
+      },
+      "southern": {
+        "lat": -41.54833333333333,
+        "lon": 57.70666666666666
+      },
+      "central": {
+        "lat": -40.865,
+        "lon": 58.15833333333333
+      },
+      "ratio": 1.046,
+      "sunAltitude": 62,
+      "sunAzimuth": 50,
+      "pathWidth": 169,
+      "duration": 214.4
+    },
+    {
+      "time": "2030-11-25T06:26:00Z",
+      "northern": {
+        "lat": -40.44833333333333,
+        "lon": 59.56166666666667
+      },
+      "southern": {
+        "lat": -41.83166666666666,
+        "lon": 58.70333333333333
+      },
+      "central": {
+        "lat": -41.14,
+        "lon": 59.138333333333335
+      },
+      "ratio": 1.046,
+      "sunAltitude": 63,
+      "sunAzimuth": 48,
+      "pathWidth": 169,
+      "duration": 215.7
+    },
+    {
+      "time": "2030-11-25T06:28:00Z",
+      "northern": {
+        "lat": -40.70666666666666,
+        "lon": 60.525
+      },
+      "southern": {
+        "lat": -42.10166666666667,
+        "lon": 59.70333333333333
+      },
+      "central": {
+        "lat": -41.405,
+        "lon": 60.12
+      },
+      "ratio": 1.046,
+      "sunAltitude": 64,
+      "sunAzimuth": 45,
+      "pathWidth": 169,
+      "duration": 216.9
+    },
+    {
+      "time": "2030-11-25T06:30:00Z",
+      "northern": {
+        "lat": -40.95333333333333,
+        "lon": 61.48833333333334
+      },
+      "southern": {
+        "lat": -42.361666666666665,
+        "lon": 60.70333333333333
+      },
+      "central": {
+        "lat": -41.65833333333333,
+        "lon": 61.10166666666667
+      },
+      "ratio": 1.046,
+      "sunAltitude": 64,
+      "sunAzimuth": 42,
+      "pathWidth": 169,
+      "duration": 217.9
+    },
+    {
+      "time": "2030-11-25T06:32:00Z",
+      "northern": {
+        "lat": -41.19,
+        "lon": 62.45333333333333
+      },
+      "southern": {
+        "lat": -42.611666666666665,
+        "lon": 61.705
+      },
+      "central": {
+        "lat": -41.901666666666664,
+        "lon": 62.085
+      },
+      "ratio": 1.046,
+      "sunAltitude": 65,
+      "sunAzimuth": 39,
+      "pathWidth": 169,
+      "duration": 218.9
+    },
+    {
+      "time": "2030-11-25T06:34:00Z",
+      "northern": {
+        "lat": -41.416666666666664,
+        "lon": 63.41833333333334
+      },
+      "southern": {
+        "lat": -42.848333333333336,
+        "lon": 62.71
+      },
+      "central": {
+        "lat": -42.13166666666667,
+        "lon": 63.07
+      },
+      "ratio": 1.047,
+      "sunAltitude": 65,
+      "sunAzimuth": 36,
+      "pathWidth": 169,
+      "duration": 219.8
+    },
+    {
+      "time": "2030-11-25T06:36:00Z",
+      "northern": {
+        "lat": -41.63166666666667,
+        "lon": 64.38833333333334
+      },
+      "southern": {
+        "lat": -43.075,
+        "lon": 63.718333333333334
+      },
+      "central": {
+        "lat": -42.35333333333333,
+        "lon": 64.05833333333334
+      },
+      "ratio": 1.047,
+      "sunAltitude": 66,
+      "sunAzimuth": 32,
+      "pathWidth": 169,
+      "duration": 220.6
+    },
+    {
+      "time": "2030-11-25T06:38:00Z",
+      "northern": {
+        "lat": -41.836666666666666,
+        "lon": 65.35833333333333
+      },
+      "southern": {
+        "lat": -43.29,
+        "lon": 64.73
+      },
+      "central": {
+        "lat": -42.56333333333333,
+        "lon": 65.05
+      },
+      "ratio": 1.047,
+      "sunAltitude": 66,
+      "sunAzimuth": 29,
+      "pathWidth": 169,
+      "duration": 221.3
+    },
+    {
+      "time": "2030-11-25T06:40:00Z",
+      "northern": {
+        "lat": -42.03,
+        "lon": 66.33333333333333
+      },
+      "southern": {
+        "lat": -43.49333333333333,
+        "lon": 65.74666666666667
+      },
+      "central": {
+        "lat": -42.76166666666667,
+        "lon": 66.04333333333334
+      },
+      "ratio": 1.047,
+      "sunAltitude": 66,
+      "sunAzimuth": 25,
+      "pathWidth": 169,
+      "duration": 221.9
+    },
+    {
+      "time": "2030-11-25T06:42:00Z",
+      "northern": {
+        "lat": -42.21333333333333,
+        "lon": 67.31
+      },
+      "southern": {
+        "lat": -43.685,
+        "lon": 66.765
+      },
+      "central": {
+        "lat": -42.95,
+        "lon": 67.04166666666667
+      },
+      "ratio": 1.047,
+      "sunAltitude": 67,
+      "sunAzimuth": 22,
+      "pathWidth": 169,
+      "duration": 222.4
+    },
+    {
+      "time": "2030-11-25T06:44:00Z",
+      "northern": {
+        "lat": -42.38666666666666,
+        "lon": 68.29166666666667
+      },
+      "southern": {
+        "lat": -43.86666666666667,
+        "lon": 67.79
+      },
+      "central": {
+        "lat": -43.126666666666665,
+        "lon": 68.04333333333334
+      },
+      "ratio": 1.047,
+      "sunAltitude": 67,
+      "sunAzimuth": 18,
+      "pathWidth": 169,
+      "duration": 222.8
+    },
+    {
+      "time": "2030-11-25T06:46:00Z",
+      "northern": {
+        "lat": -42.55,
+        "lon": 69.27666666666667
+      },
+      "southern": {
+        "lat": -44.03666666666667,
+        "lon": 68.81833333333333
+      },
+      "central": {
+        "lat": -43.29333333333334,
+        "lon": 69.05
+      },
+      "ratio": 1.047,
+      "sunAltitude": 67,
+      "sunAzimuth": 15,
+      "pathWidth": 169,
+      "duration": 223.1
+    },
+    {
+      "time": "2030-11-25T06:48:00Z",
+      "northern": {
+        "lat": -42.70166666666667,
+        "lon": 70.26666666666667
+      },
+      "southern": {
+        "lat": -44.195,
+        "lon": 69.85166666666667
+      },
+      "central": {
+        "lat": -43.44833333333333,
+        "lon": 70.06166666666667
+      },
+      "ratio": 1.047,
+      "sunAltitude": 67,
+      "sunAzimuth": 11,
+      "pathWidth": 169,
+      "duration": 223.4
+    },
+    {
+      "time": "2030-11-25T06:50:00Z",
+      "northern": {
+        "lat": -42.84166666666667,
+        "lon": 71.26
+      },
+      "southern": {
+        "lat": -44.34166666666667,
+        "lon": 70.89166666666667
+      },
+      "central": {
+        "lat": -43.59166666666667,
+        "lon": 71.07833333333333
+      },
+      "ratio": 1.047,
+      "sunAltitude": 67,
+      "sunAzimuth": 8,
+      "pathWidth": 169,
+      "duration": 223.5
+    },
+    {
+      "time": "2030-11-25T06:52:00Z",
+      "northern": {
+        "lat": -42.971666666666664,
+        "lon": 72.25833333333334
+      },
+      "southern": {
+        "lat": -44.47666666666667,
+        "lon": 71.93666666666667
+      },
+      "central": {
+        "lat": -43.725,
+        "lon": 72.1
+      },
+      "ratio": 1.047,
+      "sunAltitude": 67,
+      "sunAzimuth": 4,
+      "pathWidth": 169,
+      "duration": 223.6
+    },
+    {
+      "time": "2030-11-25T06:54:00Z",
+      "northern": {
+        "lat": -43.09166666666667,
+        "lon": 73.26333333333334
+      },
+      "southern": {
+        "lat": -44.60166666666667,
+        "lon": 72.98833333333333
+      },
+      "central": {
+        "lat": -43.845,
+        "lon": 73.12666666666667
+      },
+      "ratio": 1.047,
+      "sunAltitude": 67,
+      "sunAzimuth": 0,
+      "pathWidth": 169,
+      "duration": 223.5
+    },
+    {
+      "time": "2030-11-25T06:56:00Z",
+      "northern": {
+        "lat": -43.2,
+        "lon": 74.27333333333333
+      },
+      "southern": {
+        "lat": -44.71333333333333,
+        "lon": 74.045
+      },
+      "central": {
+        "lat": -43.95666666666666,
+        "lon": 74.16
+      },
+      "ratio": 1.047,
+      "sunAltitude": 67,
+      "sunAzimuth": 357,
+      "pathWidth": 169,
+      "duration": 223.3
+    },
+    {
+      "time": "2030-11-25T06:58:00Z",
+      "northern": {
+        "lat": -43.29666666666667,
+        "lon": 75.28833333333333
+      },
+      "southern": {
+        "lat": -44.81333333333333,
+        "lon": 75.10833333333333
+      },
+      "central": {
+        "lat": -44.055,
+        "lon": 75.19833333333334
+      },
+      "ratio": 1.047,
+      "sunAltitude": 67,
+      "sunAzimuth": 353,
+      "pathWidth": 169,
+      "duration": 223.1
+    },
+    {
+      "time": "2030-11-25T07:00:00Z",
+      "northern": {
+        "lat": -43.38333333333333,
+        "lon": 76.31
+      },
+      "southern": {
+        "lat": -44.901666666666664,
+        "lon": 76.17833333333333
+      },
+      "central": {
+        "lat": -44.141666666666666,
+        "lon": 76.245
+      },
+      "ratio": 1.047,
+      "sunAltitude": 66,
+      "sunAzimuth": 349,
+      "pathWidth": 169,
+      "duration": 222.8
+    },
+    {
+      "time": "2030-11-25T07:02:00Z",
+      "northern": {
+        "lat": -43.458333333333336,
+        "lon": 77.33833333333334
+      },
+      "southern": {
+        "lat": -44.97833333333333,
+        "lon": 77.25666666666666
+      },
+      "central": {
+        "lat": -44.218333333333334,
+        "lon": 77.29666666666667
+      },
+      "ratio": 1.047,
+      "sunAltitude": 66,
+      "sunAzimuth": 346,
+      "pathWidth": 169,
+      "duration": 222.3
+    },
+    {
+      "time": "2030-11-25T07:04:00Z",
+      "northern": {
+        "lat": -43.52166666666667,
+        "lon": 78.37333333333333
+      },
+      "southern": {
+        "lat": -45.041666666666664,
+        "lon": 78.34166666666667
+      },
+      "central": {
+        "lat": -44.281666666666666,
+        "lon": 78.35666666666667
+      },
+      "ratio": 1.047,
+      "sunAltitude": 66,
+      "sunAzimuth": 342,
+      "pathWidth": 169,
+      "duration": 221.8
+    },
+    {
+      "time": "2030-11-25T07:06:00Z",
+      "northern": {
+        "lat": -43.575,
+        "lon": 79.415
+      },
+      "southern": {
+        "lat": -45.093333333333334,
+        "lon": 79.43333333333334
+      },
+      "central": {
+        "lat": -44.333333333333336,
+        "lon": 79.42333333333333
+      },
+      "ratio": 1.047,
+      "sunAltitude": 65,
+      "sunAzimuth": 339,
+      "pathWidth": 168,
+      "duration": 221.2
+    },
+    {
+      "time": "2030-11-25T07:08:00Z",
+      "northern": {
+        "lat": -43.615,
+        "lon": 80.465
+      },
+      "southern": {
+        "lat": -45.13166666666667,
+        "lon": 80.53333333333333
+      },
+      "central": {
+        "lat": -44.373333333333335,
+        "lon": 80.49666666666667
+      },
+      "ratio": 1.047,
+      "sunAltitude": 65,
+      "sunAzimuth": 336,
+      "pathWidth": 168,
+      "duration": 220.4
+    },
+    {
+      "time": "2030-11-25T07:10:00Z",
+      "northern": {
+        "lat": -43.64333333333333,
+        "lon": 81.52166666666666
+      },
+      "southern": {
+        "lat": -45.15833333333333,
+        "lon": 81.64
+      },
+      "central": {
+        "lat": -44.4,
+        "lon": 81.57833333333333
+      },
+      "ratio": 1.047,
+      "sunAltitude": 64,
+      "sunAzimuth": 333,
+      "pathWidth": 168,
+      "duration": 219.6
+    },
+    {
+      "time": "2030-11-25T07:12:00Z",
+      "northern": {
+        "lat": -43.66,
+        "lon": 82.58666666666667
+      },
+      "southern": {
+        "lat": -45.17166666666667,
+        "lon": 82.75666666666666
+      },
+      "central": {
+        "lat": -44.415,
+        "lon": 82.66833333333334
+      },
+      "ratio": 1.046,
+      "sunAltitude": 64,
+      "sunAzimuth": 329,
+      "pathWidth": 168,
+      "duration": 218.7
+    },
+    {
+      "time": "2030-11-25T07:14:00Z",
+      "northern": {
+        "lat": -43.665,
+        "lon": 83.66
+      },
+      "southern": {
+        "lat": -45.17333333333333,
+        "lon": 83.88166666666666
+      },
+      "central": {
+        "lat": -44.41833333333334,
+        "lon": 83.76666666666667
+      },
+      "ratio": 1.046,
+      "sunAltitude": 63,
+      "sunAzimuth": 326,
+      "pathWidth": 168,
+      "duration": 217.7
+    },
+    {
+      "time": "2030-11-25T07:16:00Z",
+      "northern": {
+        "lat": -43.656666666666666,
+        "lon": 84.74166666666666
+      },
+      "southern": {
+        "lat": -45.16,
+        "lon": 85.015
+      },
+      "central": {
+        "lat": -44.40833333333333,
+        "lon": 84.87333333333333
+      },
+      "ratio": 1.046,
+      "sunAltitude": 62,
+      "sunAzimuth": 323,
+      "pathWidth": 167,
+      "duration": 216.6
+    },
+    {
+      "time": "2030-11-25T07:18:00Z",
+      "northern": {
+        "lat": -43.63666666666667,
+        "lon": 85.83333333333333
+      },
+      "southern": {
+        "lat": -45.13333333333333,
+        "lon": 86.15833333333333
+      },
+      "central": {
+        "lat": -44.385,
+        "lon": 85.99
+      },
+      "ratio": 1.046,
+      "sunAltitude": 62,
+      "sunAzimuth": 321,
+      "pathWidth": 167,
+      "duration": 215.4
+    },
+    {
+      "time": "2030-11-25T07:20:00Z",
+      "northern": {
+        "lat": -43.60333333333333,
+        "lon": 86.93333333333334
+      },
+      "southern": {
+        "lat": -45.093333333333334,
+        "lon": 87.31
+      },
+      "central": {
+        "lat": -44.348333333333336,
+        "lon": 87.11666666666666
+      },
+      "ratio": 1.046,
+      "sunAltitude": 61,
+      "sunAzimuth": 318,
+      "pathWidth": 167,
+      "duration": 214.1
+    },
+    {
+      "time": "2030-11-25T07:22:00Z",
+      "northern": {
+        "lat": -43.55833333333333,
+        "lon": 88.04333333333334
+      },
+      "southern": {
+        "lat": -45.04,
+        "lon": 88.47333333333333
+      },
+      "central": {
+        "lat": -44.29833333333333,
+        "lon": 88.25166666666667
+      },
+      "ratio": 1.046,
+      "sunAltitude": 60,
+      "sunAzimuth": 315,
+      "pathWidth": 167,
+      "duration": 212.7
+    },
+    {
+      "time": "2030-11-25T07:24:00Z",
+      "northern": {
+        "lat": -43.498333333333335,
+        "lon": 89.165
+      },
+      "southern": {
+        "lat": -44.971666666666664,
+        "lon": 89.645
+      },
+      "central": {
+        "lat": -44.235,
+        "lon": 89.39833333333333
+      },
+      "ratio": 1.046,
+      "sunAltitude": 59,
+      "sunAzimuth": 312,
+      "pathWidth": 166,
+      "duration": 211.2
+    },
+    {
+      "time": "2030-11-25T07:26:00Z",
+      "northern": {
+        "lat": -43.425,
+        "lon": 90.29666666666667
+      },
+      "southern": {
+        "lat": -44.888333333333335,
+        "lon": 90.83
+      },
+      "central": {
+        "lat": -44.156666666666666,
+        "lon": 90.555
+      },
+      "ratio": 1.046,
+      "sunAltitude": 59,
+      "sunAzimuth": 310,
+      "pathWidth": 166,
+      "duration": 209.6
+    },
+    {
+      "time": "2030-11-25T07:28:00Z",
+      "northern": {
+        "lat": -43.33833333333333,
+        "lon": 91.43833333333333
+      },
+      "southern": {
+        "lat": -44.79,
+        "lon": 92.025
+      },
+      "central": {
+        "lat": -44.065,
+        "lon": 91.725
+      },
+      "ratio": 1.046,
+      "sunAltitude": 58,
+      "sunAzimuth": 307,
+      "pathWidth": 166,
+      "duration": 208
+    },
+    {
+      "time": "2030-11-25T07:30:00Z",
+      "northern": {
+        "lat": -43.236666666666665,
+        "lon": 92.595
+      },
+      "southern": {
+        "lat": -44.67666666666667,
+        "lon": 93.23166666666667
+      },
+      "central": {
+        "lat": -43.95666666666666,
+        "lon": 92.905
+      },
+      "ratio": 1.045,
+      "sunAltitude": 57,
+      "sunAzimuth": 305,
+      "pathWidth": 165,
+      "duration": 206.2
+    },
+    {
+      "time": "2030-11-25T07:32:00Z",
+      "northern": {
+        "lat": -43.12166666666667,
+        "lon": 93.76333333333334
+      },
+      "southern": {
+        "lat": -44.54833333333333,
+        "lon": 94.45166666666667
+      },
+      "central": {
+        "lat": -43.835,
+        "lon": 94.1
+      },
+      "ratio": 1.045,
+      "sunAltitude": 56,
+      "sunAzimuth": 303,
+      "pathWidth": 165,
+      "duration": 204.3
+    },
+    {
+      "time": "2030-11-25T07:34:00Z",
+      "northern": {
+        "lat": -42.99,
+        "lon": 94.945
+      },
+      "southern": {
+        "lat": -44.403333333333336,
+        "lon": 95.68666666666667
+      },
+      "central": {
+        "lat": -43.696666666666665,
+        "lon": 95.30666666666667
+      },
+      "ratio": 1.045,
+      "sunAltitude": 55,
+      "sunAzimuth": 300,
+      "pathWidth": 165,
+      "duration": 202.4
+    },
+    {
+      "time": "2030-11-25T07:36:00Z",
+      "northern": {
+        "lat": -42.843333333333334,
+        "lon": 96.14166666666667
+      },
+      "southern": {
+        "lat": -44.24166666666667,
+        "lon": 96.935
+      },
+      "central": {
+        "lat": -43.54333333333334,
+        "lon": 96.52833333333334
+      },
+      "ratio": 1.045,
+      "sunAltitude": 54,
+      "sunAzimuth": 298,
+      "pathWidth": 164,
+      "duration": 200.3
+    },
+    {
+      "time": "2030-11-25T07:38:00Z",
+      "northern": {
+        "lat": -42.681666666666665,
+        "lon": 97.35333333333334
+      },
+      "southern": {
+        "lat": -44.06166666666667,
+        "lon": 98.19833333333334
+      },
+      "central": {
+        "lat": -43.373333333333335,
+        "lon": 97.76666666666667
+      },
+      "ratio": 1.045,
+      "sunAltitude": 53,
+      "sunAzimuth": 296,
+      "pathWidth": 164,
+      "duration": 198.1
+    },
+    {
+      "time": "2030-11-25T07:40:00Z",
+      "northern": {
+        "lat": -42.50333333333333,
+        "lon": 98.58166666666666
+      },
+      "southern": {
+        "lat": -43.865,
+        "lon": 99.47833333333334
+      },
+      "central": {
+        "lat": -43.185,
+        "lon": 99.02
+      },
+      "ratio": 1.044,
+      "sunAltitude": 52,
+      "sunAzimuth": 294,
+      "pathWidth": 163,
+      "duration": 195.9
+    },
+    {
+      "time": "2030-11-25T07:42:00Z",
+      "northern": {
+        "lat": -42.306666666666665,
+        "lon": 99.82833333333333
+      },
+      "southern": {
+        "lat": -43.65,
+        "lon": 100.77666666666667
+      },
+      "central": {
+        "lat": -42.98,
+        "lon": 100.29166666666667
+      },
+      "ratio": 1.044,
+      "sunAltitude": 51,
+      "sunAzimuth": 292,
+      "pathWidth": 163,
+      "duration": 193.6
+    },
+    {
+      "time": "2030-11-25T07:44:00Z",
+      "northern": {
+        "lat": -42.093333333333334,
+        "lon": 101.095
+      },
+      "southern": {
+        "lat": -43.416666666666664,
+        "lon": 102.09333333333333
+      },
+      "central": {
+        "lat": -42.75666666666667,
+        "lon": 101.58333333333333
+      },
+      "ratio": 1.044,
+      "sunAltitude": 49,
+      "sunAzimuth": 290,
+      "pathWidth": 162,
+      "duration": 191.1
+    },
+    {
+      "time": "2030-11-25T07:46:00Z",
+      "northern": {
+        "lat": -41.86,
+        "lon": 102.38333333333334
+      },
+      "southern": {
+        "lat": -43.16166666666667,
+        "lon": 103.43166666666667
+      },
+      "central": {
+        "lat": -42.513333333333335,
+        "lon": 102.89666666666666
+      },
+      "ratio": 1.044,
+      "sunAltitude": 48,
+      "sunAzimuth": 288,
+      "pathWidth": 162,
+      "duration": 188.6
+    },
+    {
+      "time": "2030-11-25T07:48:00Z",
+      "northern": {
+        "lat": -41.608333333333334,
+        "lon": 103.69333333333333
+      },
+      "southern": {
+        "lat": -42.88666666666667,
+        "lon": 104.79333333333334
+      },
+      "central": {
+        "lat": -42.25,
+        "lon": 104.23166666666667
+      },
+      "ratio": 1.043,
+      "sunAltitude": 47,
+      "sunAzimuth": 286,
+      "pathWidth": 161,
+      "duration": 185.9
+    },
+    {
+      "time": "2030-11-25T07:50:00Z",
+      "northern": {
+        "lat": -41.336666666666666,
+        "lon": 105.02833333333334
+      },
+      "southern": {
+        "lat": -42.59,
+        "lon": 106.17833333333333
+      },
+      "central": {
+        "lat": -41.965,
+        "lon": 105.59166666666667
+      },
+      "ratio": 1.043,
+      "sunAltitude": 46,
+      "sunAzimuth": 284,
+      "pathWidth": 160,
+      "duration": 183.2
+    },
+    {
+      "time": "2030-11-25T07:52:00Z",
+      "northern": {
+        "lat": -41.041666666666664,
+        "lon": 106.39
+      },
+      "southern": {
+        "lat": -42.27,
+        "lon": 107.59333333333333
+      },
+      "central": {
+        "lat": -41.65833333333333,
+        "lon": 106.98
+      },
+      "ratio": 1.043,
+      "sunAltitude": 44,
+      "sunAzimuth": 282,
+      "pathWidth": 160,
+      "duration": 180.3
+    },
+    {
+      "time": "2030-11-25T07:54:00Z",
+      "northern": {
+        "lat": -40.725,
+        "lon": 107.78333333333333
+      },
+      "southern": {
+        "lat": -41.92666666666667,
+        "lon": 109.03833333333333
+      },
+      "central": {
+        "lat": -41.32833333333333,
+        "lon": 108.39833333333333
+      },
+      "ratio": 1.043,
+      "sunAltitude": 43,
+      "sunAzimuth": 280,
+      "pathWidth": 159,
+      "duration": 177.4
+    },
+    {
+      "time": "2030-11-25T07:56:00Z",
+      "northern": {
+        "lat": -40.385,
+        "lon": 109.21
+      },
+      "southern": {
+        "lat": -41.555,
+        "lon": 110.51666666666667
+      },
+      "central": {
+        "lat": -40.973333333333336,
+        "lon": 109.85166666666667
+      },
+      "ratio": 1.042,
+      "sunAltitude": 42,
+      "sunAzimuth": 278,
+      "pathWidth": 158,
+      "duration": 174.3
+    },
+    {
+      "time": "2030-11-25T07:58:00Z",
+      "northern": {
+        "lat": -40.016666666666666,
+        "lon": 110.675
+      },
+      "southern": {
+        "lat": -41.156666666666666,
+        "lon": 112.035
+      },
+      "central": {
+        "lat": -40.59,
+        "lon": 111.34166666666667
+      },
+      "ratio": 1.042,
+      "sunAltitude": 40,
+      "sunAzimuth": 277,
+      "pathWidth": 157,
+      "duration": 171.1
+    },
+    {
+      "time": "2030-11-25T08:00:00Z",
+      "northern": {
+        "lat": -39.62166666666667,
+        "lon": 112.18333333333334
+      },
+      "southern": {
+        "lat": -40.72833333333333,
+        "lon": 113.59666666666666
+      },
+      "central": {
+        "lat": -40.178333333333335,
+        "lon": 112.87666666666667
+      },
+      "ratio": 1.042,
+      "sunAltitude": 39,
+      "sunAzimuth": 275,
+      "pathWidth": 156,
+      "duration": 167.8
+    },
+    {
+      "time": "2030-11-25T08:02:00Z",
+      "northern": {
+        "lat": -39.195,
+        "lon": 113.73833333333333
+      },
+      "southern": {
+        "lat": -40.266666666666666,
+        "lon": 115.20833333333333
+      },
+      "central": {
+        "lat": -39.735,
+        "lon": 114.46
+      },
+      "ratio": 1.041,
+      "sunAltitude": 37,
+      "sunAzimuth": 273,
+      "pathWidth": 155,
+      "duration": 164.3
+    },
+    {
+      "time": "2030-11-25T08:04:00Z",
+      "northern": {
+        "lat": -38.736666666666665,
+        "lon": 115.35
+      },
+      "southern": {
+        "lat": -39.766666666666666,
+        "lon": 116.87833333333333
+      },
+      "central": {
+        "lat": -39.25666666666667,
+        "lon": 116.1
+      },
+      "ratio": 1.041,
+      "sunAltitude": 36,
+      "sunAzimuth": 271,
+      "pathWidth": 154,
+      "duration": 160.7
+    },
+    {
+      "time": "2030-11-25T08:06:00Z",
+      "northern": {
+        "lat": -38.23833333333334,
+        "lon": 117.02666666666667
+      },
+      "southern": {
+        "lat": -39.22833333333333,
+        "lon": 118.61666666666666
+      },
+      "central": {
+        "lat": -38.73833333333333,
+        "lon": 117.80666666666667
+      },
+      "ratio": 1.04,
+      "sunAltitude": 34,
+      "sunAzimuth": 270,
+      "pathWidth": 153,
+      "duration": 157
+    },
+    {
+      "time": "2030-11-25T08:08:00Z",
+      "northern": {
+        "lat": -37.7,
+        "lon": 118.77833333333334
+      },
+      "southern": {
+        "lat": -38.64333333333333,
+        "lon": 120.435
+      },
+      "central": {
+        "lat": -38.17666666666667,
+        "lon": 119.59166666666667
+      },
+      "ratio": 1.04,
+      "sunAltitude": 32,
+      "sunAzimuth": 268,
+      "pathWidth": 151,
+      "duration": 153.1
+    },
+    {
+      "time": "2030-11-25T08:10:00Z",
+      "northern": {
+        "lat": -37.11333333333334,
+        "lon": 120.62166666666667
+      },
+      "southern": {
+        "lat": -38.00333333333333,
+        "lon": 122.35
+      },
+      "central": {
+        "lat": -37.565,
+        "lon": 121.47
+      },
+      "ratio": 1.039,
+      "sunAltitude": 30,
+      "sunAzimuth": 266,
+      "pathWidth": 150,
+      "duration": 149
+    },
+    {
+      "time": "2030-11-25T08:12:00Z",
+      "northern": {
+        "lat": -36.47,
+        "lon": 122.575
+      },
+      "southern": {
+        "lat": -37.303333333333335,
+        "lon": 124.385
+      },
+      "central": {
+        "lat": -36.89333333333333,
+        "lon": 123.46333333333334
+      },
+      "ratio": 1.039,
+      "sunAltitude": 28,
+      "sunAzimuth": 264,
+      "pathWidth": 148,
+      "duration": 144.6
+    },
+    {
+      "time": "2030-11-25T08:14:00Z",
+      "northern": {
+        "lat": -35.76,
+        "lon": 124.665
+      },
+      "southern": {
+        "lat": -36.526666666666664,
+        "lon": 126.57166666666667
+      },
+      "central": {
+        "lat": -36.151666666666664,
+        "lon": 125.6
+      },
+      "ratio": 1.038,
+      "sunAltitude": 26,
+      "sunAzimuth": 262,
+      "pathWidth": 146,
+      "duration": 140
+    },
+    {
+      "time": "2030-11-25T08:16:00Z",
+      "northern": {
+        "lat": -34.96666666666667,
+        "lon": 126.93166666666667
+      },
+      "southern": {
+        "lat": -35.653333333333336,
+        "lon": 128.95833333333334
+      },
+      "central": {
+        "lat": -35.32,
+        "lon": 127.925
+      },
+      "ratio": 1.037,
+      "sunAltitude": 24,
+      "sunAzimuth": 261,
+      "pathWidth": 144,
+      "duration": 135
+    },
+    {
+      "time": "2030-11-25T08:18:00Z",
+      "northern": {
+        "lat": -34.06666666666667,
+        "lon": 129.435
+      },
+      "southern": {
+        "lat": -34.655,
+        "lon": 131.62
+      },
+      "central": {
+        "lat": -34.37166666666667,
+        "lon": 130.50333333333333
+      },
+      "ratio": 1.037,
+      "sunAltitude": 21,
+      "sunAzimuth": 259,
+      "pathWidth": 142,
+      "duration": 129.6
+    },
+    {
+      "time": "2030-11-25T08:20:00Z",
+      "northern": {
+        "lat": -33.01833333333333,
+        "lon": 132.28166666666667
+      },
+      "southern": {
+        "lat": -33.473333333333336,
+        "lon": 134.69333333333333
+      },
+      "central": {
+        "lat": -33.26,
+        "lon": 133.45833333333334
+      },
+      "ratio": 1.036,
+      "sunAltitude": 18,
+      "sunAzimuth": 256,
+      "pathWidth": 139,
+      "duration": 123.6
+    },
+    {
+      "time": "2030-11-25T08:22:00Z",
+      "northern": {
+        "lat": -31.74,
+        "lon": 135.67333333333335
+      },
+      "southern": {
+        "lat": -31.985,
+        "lon": 138.48666666666668
+      },
+      "central": {
+        "lat": -31.886666666666667,
+        "lon": 137.03333333333333
+      },
+      "ratio": 1.035,
+      "sunAltitude": 14,
+      "sunAzimuth": 254,
+      "pathWidth": 135,
+      "duration": 116.6
+    },
+    {
+      "time": "2030-11-25T08:24:00Z",
+      "northern": {
+        "lat": -30.02,
+        "lon": 140.15833333333333
+      },
+      "southern": {
+        "lat": -29.768333333333334,
+        "lon": 144.05833333333334
+      },
+      "central": {
+        "lat": -29.958333333333332,
+        "lon": 141.96666666666667
+      },
+      "ratio": 1.033,
+      "sunAltitude": 9,
+      "sunAzimuth": 251,
+      "pathWidth": 129,
+      "duration": 107.4
+    },
+    {
+      "time": null,
+      "northern": {
+        "lat": -25.891666666666666,
+        "lon": 150.865
+      },
+      "southern": {
+        "lat": -26.796666666666667,
+        "lon": 151.53
+      },
+      "central": {
+        "lat": -26.343333333333334,
+        "lon": 151.195
+      },
+      "ratio": 1.03,
+      "sunAltitude": null,
+      "sunAzimuth": null,
+      "pathWidth": 118,
+      "duration": 92.1,
+      "isLimit": true
+    }
+  ],
+  "limits": {
+    "northern": {
+      "lat": -25.891666666666666,
+      "lon": 150.865
+    },
+    "southern": {
+      "lat": -26.796666666666667,
+      "lon": 151.53
+    },
+    "central": {
+      "lat": -26.343333333333334,
+      "lon": 151.195
+    },
+    "ratio": 1.03,
+    "pathWidth": 118,
+    "duration": 92.1
+  },
+  "limitsAll": [
+    {
+      "northern": {
+        "lat": -15.765,
+        "lon": 1.9066666666666667
+      },
+      "southern": {
+        "lat": -16.67,
+        "lon": 1.3066666666666666
+      },
+      "central": {
+        "lat": -16.216666666666665,
+        "lon": 1.6083333333333334
+      },
+      "ratio": 1.03,
+      "pathWidth": 117,
+      "duration": 90.8
+    },
+    {
+      "northern": {
+        "lat": -25.891666666666666,
+        "lon": 150.865
+      },
+      "southern": {
+        "lat": -26.796666666666667,
+        "lon": 151.53
+      },
+      "central": {
+        "lat": -26.343333333333334,
+        "lon": 151.195
+      },
+      "ratio": 1.03,
+      "pathWidth": 118,
+      "duration": 92.1
+    }
+  ],
+  "greatestEclipse": {
+    "time": "2030-11-25T06:50:19.2Z",
+    "lat": null,
+    "lon": null,
+    "sunAltitude": 67,
+    "pathWidth": 169.3,
+    "sunAzimuth": 7,
+    "duration": 223.5
+  },
+  "greatestDuration": null,
+  "besselianElements": {
+    "source": "NASA GSFC",
+    "attribution": "Eclipse Predictions by Fred Espenak, NASA's GSFC",
+    "t0": 7,
+    "deltaT": 77.3,
+    "gamma": -0.3868,
+    "eclipseMagnitude": 1.0468,
+    "k1": 0.272488,
+    "k2": 0.272281,
+    "tanF1": 0.0047361,
+    "tanF2": 0.0047125,
+    "coefficients": {
+      "x": [
+        0.0442,
+        0.5787731,
+        0.0000157,
+        -0.0000099
+      ],
+      "y": [
+        -0.392726,
+        -0.0551896,
+        0.0001744,
+        8e-7
+      ],
+      "d": [
+        -20.761,
+        -0.007989,
+        0.000005,
+        0
+      ],
+      "l1": [
+        0.538213,
+        -0.0000379,
+        -0.000013,
+        0
+      ],
+      "l2": [
+        -0.007886,
+        -0.0000377,
+        -0.000013,
+        0
+      ],
+      "mu": [
+        288.27457,
+        14.99836,
+        0,
+        0
+      ]
+    },
+    "elements": {
+      "t0": 7,
+      "deltaT": 77.3,
+      "x": [
+        0.0442,
+        0.5787731,
+        0.0000157,
+        -0.0000099
+      ],
+      "y": [
+        -0.392726,
+        -0.0551896,
+        0.0001744,
+        8e-7
+      ],
+      "d": [
+        -20.761,
+        -0.007989,
+        0.000005,
+        0
+      ],
+      "l1": [
+        0.538213,
+        -0.0000379,
+        -0.000013,
+        0
+      ],
+      "l2": [
+        -0.007886,
+        -0.0000377,
+        -0.000013,
+        0
+      ],
+      "mu": [
+        288.27457,
+        14.99836,
+        0,
+        0
+      ],
+      "tanF1": 0.0047361,
+      "tanF2": 0.0047125,
+      "k1": 0.272488,
+      "k2": 0.272281,
+      "date": "2030-11-25"
+    }
+  },
+  "filteredRegion": {
+    "minLon": -180,
+    "maxLon": 180,
+    "path": [
+      {
+        "time": "2030-11-25T05:16:00Z",
+        "northern": {
+          "lat": -19.096666666666668,
+          "lon": 10.223333333333333
+        },
+        "southern": {
+          "lat": -18.421666666666667,
+          "lon": 5.66
+        },
+        "central": {
+          "lat": -18.88,
+          "lon": 8.228333333333333
+        },
+        "ratio": 1.032,
+        "sunAltitude": 7,
+        "sunAzimuth": 110,
+        "pathWidth": 126,
+        "duration": 102.2
+      },
+      {
+        "time": "2030-11-25T05:18:00Z",
+        "northern": {
+          "lat": -21.118333333333332,
+          "lon": 14.863333333333333
+        },
+        "southern": {
+          "lat": -21.2,
+          "lon": 12.073333333333334
+        },
+        "central": {
+          "lat": -21.185,
+          "lon": 13.518333333333333
+        },
+        "ratio": 1.034,
+        "sunAltitude": 13,
+        "sunAzimuth": 108,
+        "pathWidth": 133,
+        "duration": 112.6
+      },
+      {
+        "time": "2030-11-25T05:20:00Z",
+        "northern": {
+          "lat": -22.591666666666665,
+          "lon": 18.10333333333333
+        },
+        "southern": {
+          "lat": -22.898333333333333,
+          "lon": 15.761666666666667
+        },
+        "central": {
+          "lat": -22.76,
+          "lon": 16.96
+        },
+        "ratio": 1.035,
+        "sunAltitude": 17,
+        "sunAzimuth": 106,
+        "pathWidth": 138,
+        "duration": 119.9
+      },
+      {
+        "time": "2030-11-25T05:22:00Z",
+        "northern": {
+          "lat": -23.816666666666666,
+          "lon": 20.723333333333333
+        },
+        "southern": {
+          "lat": -24.251666666666665,
+          "lon": 18.611666666666668
+        },
+        "central": {
+          "lat": -24.045,
+          "lon": 19.686666666666667
+        },
+        "ratio": 1.036,
+        "sunAltitude": 20,
+        "sunAzimuth": 104,
+        "pathWidth": 142,
+        "duration": 126.1
+      },
+      {
+        "time": "2030-11-25T05:24:00Z",
+        "northern": {
+          "lat": -24.886666666666667,
+          "lon": 22.976666666666667
+        },
+        "southern": {
+          "lat": -25.413333333333334,
+          "lon": 21.01
+        },
+        "central": {
+          "lat": -25.16,
+          "lon": 22.008333333333333
+        },
+        "ratio": 1.037,
+        "sunAltitude": 23,
+        "sunAzimuth": 103,
+        "pathWidth": 145,
+        "duration": 131.5
+      },
+      {
+        "time": "2030-11-25T05:26:00Z",
+        "northern": {
+          "lat": -25.851666666666667,
+          "lon": 24.981666666666666
+        },
+        "southern": {
+          "lat": -26.45,
+          "lon": 23.115
+        },
+        "central": {
+          "lat": -26.158333333333335,
+          "lon": 24.061666666666667
+        },
+        "ratio": 1.037,
+        "sunAltitude": 25,
+        "sunAzimuth": 102,
+        "pathWidth": 147,
+        "duration": 136.5
+      },
+      {
+        "time": "2030-11-25T05:28:00Z",
+        "northern": {
+          "lat": -26.736666666666668,
+          "lon": 26.805
+        },
+        "southern": {
+          "lat": -27.393333333333334,
+          "lon": 25.015
+        },
+        "central": {
+          "lat": -27.071666666666665,
+          "lon": 25.921666666666667
+        },
+        "ratio": 1.038,
+        "sunAltitude": 28,
+        "sunAzimuth": 100,
+        "pathWidth": 149,
+        "duration": 141.1
+      },
+      {
+        "time": "2030-11-25T05:30:00Z",
+        "northern": {
+          "lat": -27.556666666666665,
+          "lon": 28.488333333333333
+        },
+        "southern": {
+          "lat": -28.266666666666666,
+          "lon": 26.76
+        },
+        "central": {
+          "lat": -27.918333333333333,
+          "lon": 27.635
+        },
+        "ratio": 1.039,
+        "sunAltitude": 30,
+        "sunAzimuth": 99,
+        "pathWidth": 151,
+        "duration": 145.5
+      },
+      {
+        "time": "2030-11-25T05:32:00Z",
+        "northern": {
+          "lat": -28.325,
+          "lon": 30.061666666666667
+        },
+        "southern": {
+          "lat": -29.08,
+          "lon": 28.385
+        },
+        "central": {
+          "lat": -28.708333333333332,
+          "lon": 29.233333333333334
+        },
+        "ratio": 1.039,
+        "sunAltitude": 32,
+        "sunAzimuth": 98,
+        "pathWidth": 153,
+        "duration": 149.6
+      },
+      {
+        "time": "2030-11-25T05:34:00Z",
+        "northern": {
+          "lat": -29.048333333333332,
+          "lon": 31.545
+        },
+        "southern": {
+          "lat": -29.845,
+          "lon": 29.913333333333334
+        },
+        "central": {
+          "lat": -29.451666666666668,
+          "lon": 30.74
+        },
+        "ratio": 1.04,
+        "sunAltitude": 33,
+        "sunAzimuth": 97,
+        "pathWidth": 155,
+        "duration": 153.5
+      },
+      {
+        "time": "2030-11-25T05:36:00Z",
+        "northern": {
+          "lat": -29.735,
+          "lon": 32.955
+        },
+        "southern": {
+          "lat": -30.568333333333335,
+          "lon": 31.361666666666668
+        },
+        "central": {
+          "lat": -30.156666666666666,
+          "lon": 32.16833333333334
+        },
+        "ratio": 1.04,
+        "sunAltitude": 35,
+        "sunAzimuth": 95,
+        "pathWidth": 156,
+        "duration": 157.2
+      },
+      {
+        "time": "2030-11-25T05:38:00Z",
+        "northern": {
+          "lat": -30.386666666666667,
+          "lon": 34.303333333333335
+        },
+        "southern": {
+          "lat": -31.256666666666668,
+          "lon": 32.745
+        },
+        "central": {
+          "lat": -30.826666666666668,
+          "lon": 33.53333333333333
+        },
+        "ratio": 1.041,
+        "sunAltitude": 37,
+        "sunAzimuth": 94,
+        "pathWidth": 157,
+        "duration": 160.8
+      },
+      {
+        "time": "2030-11-25T05:40:00Z",
+        "northern": {
+          "lat": -31.01,
+          "lon": 35.598333333333336
+        },
+        "southern": {
+          "lat": -31.911666666666665,
+          "lon": 34.071666666666665
+        },
+        "central": {
+          "lat": -31.465,
+          "lon": 34.845
+        },
+        "ratio": 1.041,
+        "sunAltitude": 38,
+        "sunAzimuth": 93,
+        "pathWidth": 158,
+        "duration": 164.3
+      },
+      {
+        "time": "2030-11-25T05:42:00Z",
+        "northern": {
+          "lat": -31.606666666666666,
+          "lon": 36.846666666666664
+        },
+        "southern": {
+          "lat": -32.538333333333334,
+          "lon": 35.35166666666667
+        },
+        "central": {
+          "lat": -32.07666666666667,
+          "lon": 36.108333333333334
+        },
+        "ratio": 1.041,
+        "sunAltitude": 40,
+        "sunAzimuth": 91,
+        "pathWidth": 159,
+        "duration": 167.6
+      },
+      {
+        "time": "2030-11-25T05:44:00Z",
+        "northern": {
+          "lat": -32.17666666666667,
+          "lon": 38.056666666666665
+        },
+        "southern": {
+          "lat": -33.138333333333335,
+          "lon": 36.59
+        },
+        "central": {
+          "lat": -32.66166666666667,
+          "lon": 37.333333333333336
+        },
+        "ratio": 1.042,
+        "sunAltitude": 41,
+        "sunAzimuth": 90,
+        "pathWidth": 160,
+        "duration": 170.8
+      },
+      {
+        "time": "2030-11-25T05:46:00Z",
+        "northern": {
+          "lat": -32.72666666666667,
+          "lon": 39.233333333333334
+        },
+        "southern": {
+          "lat": -33.71666666666667,
+          "lon": 37.795
+        },
+        "central": {
+          "lat": -33.225,
+          "lon": 38.52333333333333
+        },
+        "ratio": 1.042,
+        "sunAltitude": 43,
+        "sunAzimuth": 88,
+        "pathWidth": 161,
+        "duration": 173.8
+      },
+      {
+        "time": "2030-11-25T05:48:00Z",
+        "northern": {
+          "lat": -33.255,
+          "lon": 40.38
+        },
+        "southern": {
+          "lat": -34.27166666666667,
+          "lon": 38.968333333333334
+        },
+        "central": {
+          "lat": -33.766666666666666,
+          "lon": 39.68333333333333
+        },
+        "ratio": 1.043,
+        "sunAltitude": 44,
+        "sunAzimuth": 87,
+        "pathWidth": 162,
+        "duration": 176.8
+      },
+      {
+        "time": "2030-11-25T05:50:00Z",
+        "northern": {
+          "lat": -33.763333333333335,
+          "lon": 41.5
+        },
+        "southern": {
+          "lat": -34.805,
+          "lon": 40.115
+        },
+        "central": {
+          "lat": -34.288333333333334,
+          "lon": 40.81666666666667
+        },
+        "ratio": 1.043,
+        "sunAltitude": 45,
+        "sunAzimuth": 85,
+        "pathWidth": 163,
+        "duration": 179.7
+      },
+      {
+        "time": "2030-11-25T05:52:00Z",
+        "northern": {
+          "lat": -34.25333333333333,
+          "lon": 42.598333333333336
+        },
+        "southern": {
+          "lat": -35.321666666666665,
+          "lon": 41.23833333333334
+        },
+        "central": {
+          "lat": -34.79,
+          "lon": 41.92666666666667
+        },
+        "ratio": 1.043,
+        "sunAltitude": 47,
+        "sunAzimuth": 84,
+        "pathWidth": 163,
+        "duration": 182.4
+      },
+      {
+        "time": "2030-11-25T05:54:00Z",
+        "northern": {
+          "lat": -34.72833333333333,
+          "lon": 43.67666666666667
+        },
+        "southern": {
+          "lat": -35.818333333333335,
+          "lon": 42.34166666666667
+        },
+        "central": {
+          "lat": -35.276666666666664,
+          "lon": 43.01833333333333
+        },
+        "ratio": 1.043,
+        "sunAltitude": 48,
+        "sunAzimuth": 82,
+        "pathWidth": 164,
+        "duration": 185.1
+      },
+      {
+        "time": "2030-11-25T05:56:00Z",
+        "northern": {
+          "lat": -35.185,
+          "lon": 44.736666666666665
+        },
+        "southern": {
+          "lat": -36.29833333333333,
+          "lon": 43.428333333333335
+        },
+        "central": {
+          "lat": -35.745,
+          "lon": 44.09
+        },
+        "ratio": 1.044,
+        "sunAltitude": 49,
+        "sunAzimuth": 81,
+        "pathWidth": 165,
+        "duration": 187.7
+      },
+      {
+        "time": "2030-11-25T05:58:00Z",
+        "northern": {
+          "lat": -35.626666666666665,
+          "lon": 45.78
+        },
+        "southern": {
+          "lat": -36.763333333333335,
+          "lon": 44.498333333333335
+        },
+        "central": {
+          "lat": -36.196666666666665,
+          "lon": 45.14833333333333
+        },
+        "ratio": 1.044,
+        "sunAltitude": 50,
+        "sunAzimuth": 79,
+        "pathWidth": 165,
+        "duration": 190.2
+      },
+      {
+        "time": "2030-11-25T06:00:00Z",
+        "northern": {
+          "lat": -36.053333333333335,
+          "lon": 46.81166666666667
+        },
+        "southern": {
+          "lat": -37.211666666666666,
+          "lon": 45.555
+        },
+        "central": {
+          "lat": -36.635,
+          "lon": 46.19166666666667
+        },
+        "ratio": 1.044,
+        "sunAltitude": 51,
+        "sunAzimuth": 77,
+        "pathWidth": 166,
+        "duration": 192.6
+      },
+      {
+        "time": "2030-11-25T06:02:00Z",
+        "northern": {
+          "lat": -36.46666666666667,
+          "lon": 47.83
+        },
+        "southern": {
+          "lat": -37.645,
+          "lon": 46.60166666666667
+        },
+        "central": {
+          "lat": -37.05833333333333,
+          "lon": 47.223333333333336
+        },
+        "ratio": 1.044,
+        "sunAltitude": 53,
+        "sunAzimuth": 75,
+        "pathWidth": 166,
+        "duration": 194.9
+      },
+      {
+        "time": "2030-11-25T06:04:00Z",
+        "northern": {
+          "lat": -36.865,
+          "lon": 48.83833333333333
+        },
+        "southern": {
+          "lat": -38.065,
+          "lon": 47.63666666666667
+        },
+        "central": {
+          "lat": -37.46666666666667,
+          "lon": 48.245
+        },
+        "ratio": 1.045,
+        "sunAltitude": 54,
+        "sunAzimuth": 73,
+        "pathWidth": 166,
+        "duration": 197.1
+      },
+      {
+        "time": "2030-11-25T06:06:00Z",
+        "northern": {
+          "lat": -37.251666666666665,
+          "lon": 49.83833333333333
+        },
+        "southern": {
+          "lat": -38.47,
+          "lon": 48.663333333333334
+        },
+        "central": {
+          "lat": -37.861666666666665,
+          "lon": 49.25833333333333
+        },
+        "ratio": 1.045,
+        "sunAltitude": 55,
+        "sunAzimuth": 71,
+        "pathWidth": 167,
+        "duration": 199.2
+      },
+      {
+        "time": "2030-11-25T06:08:00Z",
+        "northern": {
+          "lat": -37.625,
+          "lon": 50.83
+        },
+        "southern": {
+          "lat": -38.861666666666665,
+          "lon": 49.68333333333333
+        },
+        "central": {
+          "lat": -38.245,
+          "lon": 50.265
+        },
+        "ratio": 1.045,
+        "sunAltitude": 56,
+        "sunAzimuth": 69,
+        "pathWidth": 167,
+        "duration": 201.3
+      },
+      {
+        "time": "2030-11-25T06:10:00Z",
+        "northern": {
+          "lat": -37.985,
+          "lon": 51.815
+        },
+        "southern": {
+          "lat": -39.24,
+          "lon": 50.69833333333333
+        },
+        "central": {
+          "lat": -38.615,
+          "lon": 51.263333333333335
+        },
+        "ratio": 1.045,
+        "sunAltitude": 57,
+        "sunAzimuth": 67,
+        "pathWidth": 167,
+        "duration": 203.2
+      },
+      {
+        "time": "2030-11-25T06:12:00Z",
+        "northern": {
+          "lat": -38.333333333333336,
+          "lon": 52.79333333333334
+        },
+        "southern": {
+          "lat": -39.60666666666667,
+          "lon": 51.70666666666666
+        },
+        "central": {
+          "lat": -38.971666666666664,
+          "lon": 52.25833333333333
+        },
+        "ratio": 1.045,
+        "sunAltitude": 57,
+        "sunAzimuth": 65,
+        "pathWidth": 168,
+        "duration": 205.1
+      },
+      {
+        "time": "2030-11-25T06:14:00Z",
+        "northern": {
+          "lat": -38.67,
+          "lon": 53.76833333333333
+        },
+        "southern": {
+          "lat": -39.96,
+          "lon": 52.711666666666666
+        },
+        "central": {
+          "lat": -39.31666666666667,
+          "lon": 53.24666666666667
+        },
+        "ratio": 1.045,
+        "sunAltitude": 58,
+        "sunAzimuth": 63,
+        "pathWidth": 168,
+        "duration": 206.9
+      },
+      {
+        "time": "2030-11-25T06:16:00Z",
+        "northern": {
+          "lat": -38.99333333333333,
+          "lon": 54.73833333333333
+        },
+        "southern": {
+          "lat": -40.30166666666667,
+          "lon": 53.71333333333333
+        },
+        "central": {
+          "lat": -39.64833333333333,
+          "lon": 54.233333333333334
+        },
+        "ratio": 1.046,
+        "sunAltitude": 59,
+        "sunAzimuth": 61,
+        "pathWidth": 168,
+        "duration": 208.6
+      },
+      {
+        "time": "2030-11-25T06:18:00Z",
+        "northern": {
+          "lat": -39.306666666666665,
+          "lon": 55.70666666666666
+        },
+        "southern": {
+          "lat": -40.63166666666667,
+          "lon": 54.71333333333333
+        },
+        "central": {
+          "lat": -39.97,
+          "lon": 55.21666666666667
+        },
+        "ratio": 1.046,
+        "sunAltitude": 60,
+        "sunAzimuth": 58,
+        "pathWidth": 168,
+        "duration": 210.2
+      },
+      {
+        "time": "2030-11-25T06:20:00Z",
+        "northern": {
+          "lat": -39.608333333333334,
+          "lon": 56.67166666666667
+        },
+        "southern": {
+          "lat": -40.94833333333333,
+          "lon": 55.711666666666666
+        },
+        "central": {
+          "lat": -40.28,
+          "lon": 56.19833333333333
+        },
+        "ratio": 1.046,
+        "sunAltitude": 61,
+        "sunAzimuth": 56,
+        "pathWidth": 169,
+        "duration": 211.7
+      },
+      {
+        "time": "2030-11-25T06:22:00Z",
+        "northern": {
+          "lat": -39.9,
+          "lon": 57.63666666666667
+        },
+        "southern": {
+          "lat": -41.255,
+          "lon": 56.708333333333336
+        },
+        "central": {
+          "lat": -40.57833333333333,
+          "lon": 57.178333333333335
+        },
+        "ratio": 1.046,
+        "sunAltitude": 62,
+        "sunAzimuth": 53,
+        "pathWidth": 169,
+        "duration": 213.1
+      },
+      {
+        "time": "2030-11-25T06:24:00Z",
+        "northern": {
+          "lat": -40.18,
+          "lon": 58.598333333333336
+        },
+        "southern": {
+          "lat": -41.54833333333333,
+          "lon": 57.70666666666666
+        },
+        "central": {
+          "lat": -40.865,
+          "lon": 58.15833333333333
+        },
+        "ratio": 1.046,
+        "sunAltitude": 62,
+        "sunAzimuth": 50,
+        "pathWidth": 169,
+        "duration": 214.4
+      },
+      {
+        "time": "2030-11-25T06:26:00Z",
+        "northern": {
+          "lat": -40.44833333333333,
+          "lon": 59.56166666666667
+        },
+        "southern": {
+          "lat": -41.83166666666666,
+          "lon": 58.70333333333333
+        },
+        "central": {
+          "lat": -41.14,
+          "lon": 59.138333333333335
+        },
+        "ratio": 1.046,
+        "sunAltitude": 63,
+        "sunAzimuth": 48,
+        "pathWidth": 169,
+        "duration": 215.7
+      },
+      {
+        "time": "2030-11-25T06:28:00Z",
+        "northern": {
+          "lat": -40.70666666666666,
+          "lon": 60.525
+        },
+        "southern": {
+          "lat": -42.10166666666667,
+          "lon": 59.70333333333333
+        },
+        "central": {
+          "lat": -41.405,
+          "lon": 60.12
+        },
+        "ratio": 1.046,
+        "sunAltitude": 64,
+        "sunAzimuth": 45,
+        "pathWidth": 169,
+        "duration": 216.9
+      },
+      {
+        "time": "2030-11-25T06:30:00Z",
+        "northern": {
+          "lat": -40.95333333333333,
+          "lon": 61.48833333333334
+        },
+        "southern": {
+          "lat": -42.361666666666665,
+          "lon": 60.70333333333333
+        },
+        "central": {
+          "lat": -41.65833333333333,
+          "lon": 61.10166666666667
+        },
+        "ratio": 1.046,
+        "sunAltitude": 64,
+        "sunAzimuth": 42,
+        "pathWidth": 169,
+        "duration": 217.9
+      },
+      {
+        "time": "2030-11-25T06:32:00Z",
+        "northern": {
+          "lat": -41.19,
+          "lon": 62.45333333333333
+        },
+        "southern": {
+          "lat": -42.611666666666665,
+          "lon": 61.705
+        },
+        "central": {
+          "lat": -41.901666666666664,
+          "lon": 62.085
+        },
+        "ratio": 1.046,
+        "sunAltitude": 65,
+        "sunAzimuth": 39,
+        "pathWidth": 169,
+        "duration": 218.9
+      },
+      {
+        "time": "2030-11-25T06:34:00Z",
+        "northern": {
+          "lat": -41.416666666666664,
+          "lon": 63.41833333333334
+        },
+        "southern": {
+          "lat": -42.848333333333336,
+          "lon": 62.71
+        },
+        "central": {
+          "lat": -42.13166666666667,
+          "lon": 63.07
+        },
+        "ratio": 1.047,
+        "sunAltitude": 65,
+        "sunAzimuth": 36,
+        "pathWidth": 169,
+        "duration": 219.8
+      },
+      {
+        "time": "2030-11-25T06:36:00Z",
+        "northern": {
+          "lat": -41.63166666666667,
+          "lon": 64.38833333333334
+        },
+        "southern": {
+          "lat": -43.075,
+          "lon": 63.718333333333334
+        },
+        "central": {
+          "lat": -42.35333333333333,
+          "lon": 64.05833333333334
+        },
+        "ratio": 1.047,
+        "sunAltitude": 66,
+        "sunAzimuth": 32,
+        "pathWidth": 169,
+        "duration": 220.6
+      },
+      {
+        "time": "2030-11-25T06:38:00Z",
+        "northern": {
+          "lat": -41.836666666666666,
+          "lon": 65.35833333333333
+        },
+        "southern": {
+          "lat": -43.29,
+          "lon": 64.73
+        },
+        "central": {
+          "lat": -42.56333333333333,
+          "lon": 65.05
+        },
+        "ratio": 1.047,
+        "sunAltitude": 66,
+        "sunAzimuth": 29,
+        "pathWidth": 169,
+        "duration": 221.3
+      },
+      {
+        "time": "2030-11-25T06:40:00Z",
+        "northern": {
+          "lat": -42.03,
+          "lon": 66.33333333333333
+        },
+        "southern": {
+          "lat": -43.49333333333333,
+          "lon": 65.74666666666667
+        },
+        "central": {
+          "lat": -42.76166666666667,
+          "lon": 66.04333333333334
+        },
+        "ratio": 1.047,
+        "sunAltitude": 66,
+        "sunAzimuth": 25,
+        "pathWidth": 169,
+        "duration": 221.9
+      },
+      {
+        "time": "2030-11-25T06:42:00Z",
+        "northern": {
+          "lat": -42.21333333333333,
+          "lon": 67.31
+        },
+        "southern": {
+          "lat": -43.685,
+          "lon": 66.765
+        },
+        "central": {
+          "lat": -42.95,
+          "lon": 67.04166666666667
+        },
+        "ratio": 1.047,
+        "sunAltitude": 67,
+        "sunAzimuth": 22,
+        "pathWidth": 169,
+        "duration": 222.4
+      },
+      {
+        "time": "2030-11-25T06:44:00Z",
+        "northern": {
+          "lat": -42.38666666666666,
+          "lon": 68.29166666666667
+        },
+        "southern": {
+          "lat": -43.86666666666667,
+          "lon": 67.79
+        },
+        "central": {
+          "lat": -43.126666666666665,
+          "lon": 68.04333333333334
+        },
+        "ratio": 1.047,
+        "sunAltitude": 67,
+        "sunAzimuth": 18,
+        "pathWidth": 169,
+        "duration": 222.8
+      },
+      {
+        "time": "2030-11-25T06:46:00Z",
+        "northern": {
+          "lat": -42.55,
+          "lon": 69.27666666666667
+        },
+        "southern": {
+          "lat": -44.03666666666667,
+          "lon": 68.81833333333333
+        },
+        "central": {
+          "lat": -43.29333333333334,
+          "lon": 69.05
+        },
+        "ratio": 1.047,
+        "sunAltitude": 67,
+        "sunAzimuth": 15,
+        "pathWidth": 169,
+        "duration": 223.1
+      },
+      {
+        "time": "2030-11-25T06:48:00Z",
+        "northern": {
+          "lat": -42.70166666666667,
+          "lon": 70.26666666666667
+        },
+        "southern": {
+          "lat": -44.195,
+          "lon": 69.85166666666667
+        },
+        "central": {
+          "lat": -43.44833333333333,
+          "lon": 70.06166666666667
+        },
+        "ratio": 1.047,
+        "sunAltitude": 67,
+        "sunAzimuth": 11,
+        "pathWidth": 169,
+        "duration": 223.4
+      },
+      {
+        "time": "2030-11-25T06:50:00Z",
+        "northern": {
+          "lat": -42.84166666666667,
+          "lon": 71.26
+        },
+        "southern": {
+          "lat": -44.34166666666667,
+          "lon": 70.89166666666667
+        },
+        "central": {
+          "lat": -43.59166666666667,
+          "lon": 71.07833333333333
+        },
+        "ratio": 1.047,
+        "sunAltitude": 67,
+        "sunAzimuth": 8,
+        "pathWidth": 169,
+        "duration": 223.5
+      },
+      {
+        "time": "2030-11-25T06:52:00Z",
+        "northern": {
+          "lat": -42.971666666666664,
+          "lon": 72.25833333333334
+        },
+        "southern": {
+          "lat": -44.47666666666667,
+          "lon": 71.93666666666667
+        },
+        "central": {
+          "lat": -43.725,
+          "lon": 72.1
+        },
+        "ratio": 1.047,
+        "sunAltitude": 67,
+        "sunAzimuth": 4,
+        "pathWidth": 169,
+        "duration": 223.6
+      },
+      {
+        "time": "2030-11-25T06:54:00Z",
+        "northern": {
+          "lat": -43.09166666666667,
+          "lon": 73.26333333333334
+        },
+        "southern": {
+          "lat": -44.60166666666667,
+          "lon": 72.98833333333333
+        },
+        "central": {
+          "lat": -43.845,
+          "lon": 73.12666666666667
+        },
+        "ratio": 1.047,
+        "sunAltitude": 67,
+        "sunAzimuth": 0,
+        "pathWidth": 169,
+        "duration": 223.5
+      },
+      {
+        "time": "2030-11-25T06:56:00Z",
+        "northern": {
+          "lat": -43.2,
+          "lon": 74.27333333333333
+        },
+        "southern": {
+          "lat": -44.71333333333333,
+          "lon": 74.045
+        },
+        "central": {
+          "lat": -43.95666666666666,
+          "lon": 74.16
+        },
+        "ratio": 1.047,
+        "sunAltitude": 67,
+        "sunAzimuth": 357,
+        "pathWidth": 169,
+        "duration": 223.3
+      },
+      {
+        "time": "2030-11-25T06:58:00Z",
+        "northern": {
+          "lat": -43.29666666666667,
+          "lon": 75.28833333333333
+        },
+        "southern": {
+          "lat": -44.81333333333333,
+          "lon": 75.10833333333333
+        },
+        "central": {
+          "lat": -44.055,
+          "lon": 75.19833333333334
+        },
+        "ratio": 1.047,
+        "sunAltitude": 67,
+        "sunAzimuth": 353,
+        "pathWidth": 169,
+        "duration": 223.1
+      },
+      {
+        "time": "2030-11-25T07:00:00Z",
+        "northern": {
+          "lat": -43.38333333333333,
+          "lon": 76.31
+        },
+        "southern": {
+          "lat": -44.901666666666664,
+          "lon": 76.17833333333333
+        },
+        "central": {
+          "lat": -44.141666666666666,
+          "lon": 76.245
+        },
+        "ratio": 1.047,
+        "sunAltitude": 66,
+        "sunAzimuth": 349,
+        "pathWidth": 169,
+        "duration": 222.8
+      },
+      {
+        "time": "2030-11-25T07:02:00Z",
+        "northern": {
+          "lat": -43.458333333333336,
+          "lon": 77.33833333333334
+        },
+        "southern": {
+          "lat": -44.97833333333333,
+          "lon": 77.25666666666666
+        },
+        "central": {
+          "lat": -44.218333333333334,
+          "lon": 77.29666666666667
+        },
+        "ratio": 1.047,
+        "sunAltitude": 66,
+        "sunAzimuth": 346,
+        "pathWidth": 169,
+        "duration": 222.3
+      },
+      {
+        "time": "2030-11-25T07:04:00Z",
+        "northern": {
+          "lat": -43.52166666666667,
+          "lon": 78.37333333333333
+        },
+        "southern": {
+          "lat": -45.041666666666664,
+          "lon": 78.34166666666667
+        },
+        "central": {
+          "lat": -44.281666666666666,
+          "lon": 78.35666666666667
+        },
+        "ratio": 1.047,
+        "sunAltitude": 66,
+        "sunAzimuth": 342,
+        "pathWidth": 169,
+        "duration": 221.8
+      },
+      {
+        "time": "2030-11-25T07:06:00Z",
+        "northern": {
+          "lat": -43.575,
+          "lon": 79.415
+        },
+        "southern": {
+          "lat": -45.093333333333334,
+          "lon": 79.43333333333334
+        },
+        "central": {
+          "lat": -44.333333333333336,
+          "lon": 79.42333333333333
+        },
+        "ratio": 1.047,
+        "sunAltitude": 65,
+        "sunAzimuth": 339,
+        "pathWidth": 168,
+        "duration": 221.2
+      },
+      {
+        "time": "2030-11-25T07:08:00Z",
+        "northern": {
+          "lat": -43.615,
+          "lon": 80.465
+        },
+        "southern": {
+          "lat": -45.13166666666667,
+          "lon": 80.53333333333333
+        },
+        "central": {
+          "lat": -44.373333333333335,
+          "lon": 80.49666666666667
+        },
+        "ratio": 1.047,
+        "sunAltitude": 65,
+        "sunAzimuth": 336,
+        "pathWidth": 168,
+        "duration": 220.4
+      },
+      {
+        "time": "2030-11-25T07:10:00Z",
+        "northern": {
+          "lat": -43.64333333333333,
+          "lon": 81.52166666666666
+        },
+        "southern": {
+          "lat": -45.15833333333333,
+          "lon": 81.64
+        },
+        "central": {
+          "lat": -44.4,
+          "lon": 81.57833333333333
+        },
+        "ratio": 1.047,
+        "sunAltitude": 64,
+        "sunAzimuth": 333,
+        "pathWidth": 168,
+        "duration": 219.6
+      },
+      {
+        "time": "2030-11-25T07:12:00Z",
+        "northern": {
+          "lat": -43.66,
+          "lon": 82.58666666666667
+        },
+        "southern": {
+          "lat": -45.17166666666667,
+          "lon": 82.75666666666666
+        },
+        "central": {
+          "lat": -44.415,
+          "lon": 82.66833333333334
+        },
+        "ratio": 1.046,
+        "sunAltitude": 64,
+        "sunAzimuth": 329,
+        "pathWidth": 168,
+        "duration": 218.7
+      },
+      {
+        "time": "2030-11-25T07:14:00Z",
+        "northern": {
+          "lat": -43.665,
+          "lon": 83.66
+        },
+        "southern": {
+          "lat": -45.17333333333333,
+          "lon": 83.88166666666666
+        },
+        "central": {
+          "lat": -44.41833333333334,
+          "lon": 83.76666666666667
+        },
+        "ratio": 1.046,
+        "sunAltitude": 63,
+        "sunAzimuth": 326,
+        "pathWidth": 168,
+        "duration": 217.7
+      },
+      {
+        "time": "2030-11-25T07:16:00Z",
+        "northern": {
+          "lat": -43.656666666666666,
+          "lon": 84.74166666666666
+        },
+        "southern": {
+          "lat": -45.16,
+          "lon": 85.015
+        },
+        "central": {
+          "lat": -44.40833333333333,
+          "lon": 84.87333333333333
+        },
+        "ratio": 1.046,
+        "sunAltitude": 62,
+        "sunAzimuth": 323,
+        "pathWidth": 167,
+        "duration": 216.6
+      },
+      {
+        "time": "2030-11-25T07:18:00Z",
+        "northern": {
+          "lat": -43.63666666666667,
+          "lon": 85.83333333333333
+        },
+        "southern": {
+          "lat": -45.13333333333333,
+          "lon": 86.15833333333333
+        },
+        "central": {
+          "lat": -44.385,
+          "lon": 85.99
+        },
+        "ratio": 1.046,
+        "sunAltitude": 62,
+        "sunAzimuth": 321,
+        "pathWidth": 167,
+        "duration": 215.4
+      },
+      {
+        "time": "2030-11-25T07:20:00Z",
+        "northern": {
+          "lat": -43.60333333333333,
+          "lon": 86.93333333333334
+        },
+        "southern": {
+          "lat": -45.093333333333334,
+          "lon": 87.31
+        },
+        "central": {
+          "lat": -44.348333333333336,
+          "lon": 87.11666666666666
+        },
+        "ratio": 1.046,
+        "sunAltitude": 61,
+        "sunAzimuth": 318,
+        "pathWidth": 167,
+        "duration": 214.1
+      },
+      {
+        "time": "2030-11-25T07:22:00Z",
+        "northern": {
+          "lat": -43.55833333333333,
+          "lon": 88.04333333333334
+        },
+        "southern": {
+          "lat": -45.04,
+          "lon": 88.47333333333333
+        },
+        "central": {
+          "lat": -44.29833333333333,
+          "lon": 88.25166666666667
+        },
+        "ratio": 1.046,
+        "sunAltitude": 60,
+        "sunAzimuth": 315,
+        "pathWidth": 167,
+        "duration": 212.7
+      },
+      {
+        "time": "2030-11-25T07:24:00Z",
+        "northern": {
+          "lat": -43.498333333333335,
+          "lon": 89.165
+        },
+        "southern": {
+          "lat": -44.971666666666664,
+          "lon": 89.645
+        },
+        "central": {
+          "lat": -44.235,
+          "lon": 89.39833333333333
+        },
+        "ratio": 1.046,
+        "sunAltitude": 59,
+        "sunAzimuth": 312,
+        "pathWidth": 166,
+        "duration": 211.2
+      },
+      {
+        "time": "2030-11-25T07:26:00Z",
+        "northern": {
+          "lat": -43.425,
+          "lon": 90.29666666666667
+        },
+        "southern": {
+          "lat": -44.888333333333335,
+          "lon": 90.83
+        },
+        "central": {
+          "lat": -44.156666666666666,
+          "lon": 90.555
+        },
+        "ratio": 1.046,
+        "sunAltitude": 59,
+        "sunAzimuth": 310,
+        "pathWidth": 166,
+        "duration": 209.6
+      },
+      {
+        "time": "2030-11-25T07:28:00Z",
+        "northern": {
+          "lat": -43.33833333333333,
+          "lon": 91.43833333333333
+        },
+        "southern": {
+          "lat": -44.79,
+          "lon": 92.025
+        },
+        "central": {
+          "lat": -44.065,
+          "lon": 91.725
+        },
+        "ratio": 1.046,
+        "sunAltitude": 58,
+        "sunAzimuth": 307,
+        "pathWidth": 166,
+        "duration": 208
+      },
+      {
+        "time": "2030-11-25T07:30:00Z",
+        "northern": {
+          "lat": -43.236666666666665,
+          "lon": 92.595
+        },
+        "southern": {
+          "lat": -44.67666666666667,
+          "lon": 93.23166666666667
+        },
+        "central": {
+          "lat": -43.95666666666666,
+          "lon": 92.905
+        },
+        "ratio": 1.045,
+        "sunAltitude": 57,
+        "sunAzimuth": 305,
+        "pathWidth": 165,
+        "duration": 206.2
+      },
+      {
+        "time": "2030-11-25T07:32:00Z",
+        "northern": {
+          "lat": -43.12166666666667,
+          "lon": 93.76333333333334
+        },
+        "southern": {
+          "lat": -44.54833333333333,
+          "lon": 94.45166666666667
+        },
+        "central": {
+          "lat": -43.835,
+          "lon": 94.1
+        },
+        "ratio": 1.045,
+        "sunAltitude": 56,
+        "sunAzimuth": 303,
+        "pathWidth": 165,
+        "duration": 204.3
+      },
+      {
+        "time": "2030-11-25T07:34:00Z",
+        "northern": {
+          "lat": -42.99,
+          "lon": 94.945
+        },
+        "southern": {
+          "lat": -44.403333333333336,
+          "lon": 95.68666666666667
+        },
+        "central": {
+          "lat": -43.696666666666665,
+          "lon": 95.30666666666667
+        },
+        "ratio": 1.045,
+        "sunAltitude": 55,
+        "sunAzimuth": 300,
+        "pathWidth": 165,
+        "duration": 202.4
+      },
+      {
+        "time": "2030-11-25T07:36:00Z",
+        "northern": {
+          "lat": -42.843333333333334,
+          "lon": 96.14166666666667
+        },
+        "southern": {
+          "lat": -44.24166666666667,
+          "lon": 96.935
+        },
+        "central": {
+          "lat": -43.54333333333334,
+          "lon": 96.52833333333334
+        },
+        "ratio": 1.045,
+        "sunAltitude": 54,
+        "sunAzimuth": 298,
+        "pathWidth": 164,
+        "duration": 200.3
+      },
+      {
+        "time": "2030-11-25T07:38:00Z",
+        "northern": {
+          "lat": -42.681666666666665,
+          "lon": 97.35333333333334
+        },
+        "southern": {
+          "lat": -44.06166666666667,
+          "lon": 98.19833333333334
+        },
+        "central": {
+          "lat": -43.373333333333335,
+          "lon": 97.76666666666667
+        },
+        "ratio": 1.045,
+        "sunAltitude": 53,
+        "sunAzimuth": 296,
+        "pathWidth": 164,
+        "duration": 198.1
+      },
+      {
+        "time": "2030-11-25T07:40:00Z",
+        "northern": {
+          "lat": -42.50333333333333,
+          "lon": 98.58166666666666
+        },
+        "southern": {
+          "lat": -43.865,
+          "lon": 99.47833333333334
+        },
+        "central": {
+          "lat": -43.185,
+          "lon": 99.02
+        },
+        "ratio": 1.044,
+        "sunAltitude": 52,
+        "sunAzimuth": 294,
+        "pathWidth": 163,
+        "duration": 195.9
+      },
+      {
+        "time": "2030-11-25T07:42:00Z",
+        "northern": {
+          "lat": -42.306666666666665,
+          "lon": 99.82833333333333
+        },
+        "southern": {
+          "lat": -43.65,
+          "lon": 100.77666666666667
+        },
+        "central": {
+          "lat": -42.98,
+          "lon": 100.29166666666667
+        },
+        "ratio": 1.044,
+        "sunAltitude": 51,
+        "sunAzimuth": 292,
+        "pathWidth": 163,
+        "duration": 193.6
+      },
+      {
+        "time": "2030-11-25T07:44:00Z",
+        "northern": {
+          "lat": -42.093333333333334,
+          "lon": 101.095
+        },
+        "southern": {
+          "lat": -43.416666666666664,
+          "lon": 102.09333333333333
+        },
+        "central": {
+          "lat": -42.75666666666667,
+          "lon": 101.58333333333333
+        },
+        "ratio": 1.044,
+        "sunAltitude": 49,
+        "sunAzimuth": 290,
+        "pathWidth": 162,
+        "duration": 191.1
+      },
+      {
+        "time": "2030-11-25T07:46:00Z",
+        "northern": {
+          "lat": -41.86,
+          "lon": 102.38333333333334
+        },
+        "southern": {
+          "lat": -43.16166666666667,
+          "lon": 103.43166666666667
+        },
+        "central": {
+          "lat": -42.513333333333335,
+          "lon": 102.89666666666666
+        },
+        "ratio": 1.044,
+        "sunAltitude": 48,
+        "sunAzimuth": 288,
+        "pathWidth": 162,
+        "duration": 188.6
+      },
+      {
+        "time": "2030-11-25T07:48:00Z",
+        "northern": {
+          "lat": -41.608333333333334,
+          "lon": 103.69333333333333
+        },
+        "southern": {
+          "lat": -42.88666666666667,
+          "lon": 104.79333333333334
+        },
+        "central": {
+          "lat": -42.25,
+          "lon": 104.23166666666667
+        },
+        "ratio": 1.043,
+        "sunAltitude": 47,
+        "sunAzimuth": 286,
+        "pathWidth": 161,
+        "duration": 185.9
+      },
+      {
+        "time": "2030-11-25T07:50:00Z",
+        "northern": {
+          "lat": -41.336666666666666,
+          "lon": 105.02833333333334
+        },
+        "southern": {
+          "lat": -42.59,
+          "lon": 106.17833333333333
+        },
+        "central": {
+          "lat": -41.965,
+          "lon": 105.59166666666667
+        },
+        "ratio": 1.043,
+        "sunAltitude": 46,
+        "sunAzimuth": 284,
+        "pathWidth": 160,
+        "duration": 183.2
+      },
+      {
+        "time": "2030-11-25T07:52:00Z",
+        "northern": {
+          "lat": -41.041666666666664,
+          "lon": 106.39
+        },
+        "southern": {
+          "lat": -42.27,
+          "lon": 107.59333333333333
+        },
+        "central": {
+          "lat": -41.65833333333333,
+          "lon": 106.98
+        },
+        "ratio": 1.043,
+        "sunAltitude": 44,
+        "sunAzimuth": 282,
+        "pathWidth": 160,
+        "duration": 180.3
+      },
+      {
+        "time": "2030-11-25T07:54:00Z",
+        "northern": {
+          "lat": -40.725,
+          "lon": 107.78333333333333
+        },
+        "southern": {
+          "lat": -41.92666666666667,
+          "lon": 109.03833333333333
+        },
+        "central": {
+          "lat": -41.32833333333333,
+          "lon": 108.39833333333333
+        },
+        "ratio": 1.043,
+        "sunAltitude": 43,
+        "sunAzimuth": 280,
+        "pathWidth": 159,
+        "duration": 177.4
+      },
+      {
+        "time": "2030-11-25T07:56:00Z",
+        "northern": {
+          "lat": -40.385,
+          "lon": 109.21
+        },
+        "southern": {
+          "lat": -41.555,
+          "lon": 110.51666666666667
+        },
+        "central": {
+          "lat": -40.973333333333336,
+          "lon": 109.85166666666667
+        },
+        "ratio": 1.042,
+        "sunAltitude": 42,
+        "sunAzimuth": 278,
+        "pathWidth": 158,
+        "duration": 174.3
+      },
+      {
+        "time": "2030-11-25T07:58:00Z",
+        "northern": {
+          "lat": -40.016666666666666,
+          "lon": 110.675
+        },
+        "southern": {
+          "lat": -41.156666666666666,
+          "lon": 112.035
+        },
+        "central": {
+          "lat": -40.59,
+          "lon": 111.34166666666667
+        },
+        "ratio": 1.042,
+        "sunAltitude": 40,
+        "sunAzimuth": 277,
+        "pathWidth": 157,
+        "duration": 171.1
+      },
+      {
+        "time": "2030-11-25T08:00:00Z",
+        "northern": {
+          "lat": -39.62166666666667,
+          "lon": 112.18333333333334
+        },
+        "southern": {
+          "lat": -40.72833333333333,
+          "lon": 113.59666666666666
+        },
+        "central": {
+          "lat": -40.178333333333335,
+          "lon": 112.87666666666667
+        },
+        "ratio": 1.042,
+        "sunAltitude": 39,
+        "sunAzimuth": 275,
+        "pathWidth": 156,
+        "duration": 167.8
+      },
+      {
+        "time": "2030-11-25T08:02:00Z",
+        "northern": {
+          "lat": -39.195,
+          "lon": 113.73833333333333
+        },
+        "southern": {
+          "lat": -40.266666666666666,
+          "lon": 115.20833333333333
+        },
+        "central": {
+          "lat": -39.735,
+          "lon": 114.46
+        },
+        "ratio": 1.041,
+        "sunAltitude": 37,
+        "sunAzimuth": 273,
+        "pathWidth": 155,
+        "duration": 164.3
+      },
+      {
+        "time": "2030-11-25T08:04:00Z",
+        "northern": {
+          "lat": -38.736666666666665,
+          "lon": 115.35
+        },
+        "southern": {
+          "lat": -39.766666666666666,
+          "lon": 116.87833333333333
+        },
+        "central": {
+          "lat": -39.25666666666667,
+          "lon": 116.1
+        },
+        "ratio": 1.041,
+        "sunAltitude": 36,
+        "sunAzimuth": 271,
+        "pathWidth": 154,
+        "duration": 160.7
+      },
+      {
+        "time": "2030-11-25T08:06:00Z",
+        "northern": {
+          "lat": -38.23833333333334,
+          "lon": 117.02666666666667
+        },
+        "southern": {
+          "lat": -39.22833333333333,
+          "lon": 118.61666666666666
+        },
+        "central": {
+          "lat": -38.73833333333333,
+          "lon": 117.80666666666667
+        },
+        "ratio": 1.04,
+        "sunAltitude": 34,
+        "sunAzimuth": 270,
+        "pathWidth": 153,
+        "duration": 157
+      },
+      {
+        "time": "2030-11-25T08:08:00Z",
+        "northern": {
+          "lat": -37.7,
+          "lon": 118.77833333333334
+        },
+        "southern": {
+          "lat": -38.64333333333333,
+          "lon": 120.435
+        },
+        "central": {
+          "lat": -38.17666666666667,
+          "lon": 119.59166666666667
+        },
+        "ratio": 1.04,
+        "sunAltitude": 32,
+        "sunAzimuth": 268,
+        "pathWidth": 151,
+        "duration": 153.1
+      },
+      {
+        "time": "2030-11-25T08:10:00Z",
+        "northern": {
+          "lat": -37.11333333333334,
+          "lon": 120.62166666666667
+        },
+        "southern": {
+          "lat": -38.00333333333333,
+          "lon": 122.35
+        },
+        "central": {
+          "lat": -37.565,
+          "lon": 121.47
+        },
+        "ratio": 1.039,
+        "sunAltitude": 30,
+        "sunAzimuth": 266,
+        "pathWidth": 150,
+        "duration": 149
+      },
+      {
+        "time": "2030-11-25T08:12:00Z",
+        "northern": {
+          "lat": -36.47,
+          "lon": 122.575
+        },
+        "southern": {
+          "lat": -37.303333333333335,
+          "lon": 124.385
+        },
+        "central": {
+          "lat": -36.89333333333333,
+          "lon": 123.46333333333334
+        },
+        "ratio": 1.039,
+        "sunAltitude": 28,
+        "sunAzimuth": 264,
+        "pathWidth": 148,
+        "duration": 144.6
+      },
+      {
+        "time": "2030-11-25T08:14:00Z",
+        "northern": {
+          "lat": -35.76,
+          "lon": 124.665
+        },
+        "southern": {
+          "lat": -36.526666666666664,
+          "lon": 126.57166666666667
+        },
+        "central": {
+          "lat": -36.151666666666664,
+          "lon": 125.6
+        },
+        "ratio": 1.038,
+        "sunAltitude": 26,
+        "sunAzimuth": 262,
+        "pathWidth": 146,
+        "duration": 140
+      },
+      {
+        "time": "2030-11-25T08:16:00Z",
+        "northern": {
+          "lat": -34.96666666666667,
+          "lon": 126.93166666666667
+        },
+        "southern": {
+          "lat": -35.653333333333336,
+          "lon": 128.95833333333334
+        },
+        "central": {
+          "lat": -35.32,
+          "lon": 127.925
+        },
+        "ratio": 1.037,
+        "sunAltitude": 24,
+        "sunAzimuth": 261,
+        "pathWidth": 144,
+        "duration": 135
+      },
+      {
+        "time": "2030-11-25T08:18:00Z",
+        "northern": {
+          "lat": -34.06666666666667,
+          "lon": 129.435
+        },
+        "southern": {
+          "lat": -34.655,
+          "lon": 131.62
+        },
+        "central": {
+          "lat": -34.37166666666667,
+          "lon": 130.50333333333333
+        },
+        "ratio": 1.037,
+        "sunAltitude": 21,
+        "sunAzimuth": 259,
+        "pathWidth": 142,
+        "duration": 129.6
+      },
+      {
+        "time": "2030-11-25T08:20:00Z",
+        "northern": {
+          "lat": -33.01833333333333,
+          "lon": 132.28166666666667
+        },
+        "southern": {
+          "lat": -33.473333333333336,
+          "lon": 134.69333333333333
+        },
+        "central": {
+          "lat": -33.26,
+          "lon": 133.45833333333334
+        },
+        "ratio": 1.036,
+        "sunAltitude": 18,
+        "sunAzimuth": 256,
+        "pathWidth": 139,
+        "duration": 123.6
+      },
+      {
+        "time": "2030-11-25T08:22:00Z",
+        "northern": {
+          "lat": -31.74,
+          "lon": 135.67333333333335
+        },
+        "southern": {
+          "lat": -31.985,
+          "lon": 138.48666666666668
+        },
+        "central": {
+          "lat": -31.886666666666667,
+          "lon": 137.03333333333333
+        },
+        "ratio": 1.035,
+        "sunAltitude": 14,
+        "sunAzimuth": 254,
+        "pathWidth": 135,
+        "duration": 116.6
+      },
+      {
+        "time": "2030-11-25T08:24:00Z",
+        "northern": {
+          "lat": -30.02,
+          "lon": 140.15833333333333
+        },
+        "southern": {
+          "lat": -29.768333333333334,
+          "lon": 144.05833333333334
+        },
+        "central": {
+          "lat": -29.958333333333332,
+          "lon": 141.96666666666667
+        },
+        "ratio": 1.033,
+        "sunAltitude": 9,
+        "sunAzimuth": 251,
+        "pathWidth": 129,
+        "duration": 107.4
+      },
+      {
+        "time": null,
+        "northern": {
+          "lat": -25.891666666666666,
+          "lon": 150.865
+        },
+        "southern": {
+          "lat": -26.796666666666667,
+          "lon": 151.53
+        },
+        "central": {
+          "lat": -26.343333333333334,
+          "lon": 151.195
+        },
+        "ratio": 1.03,
+        "sunAltitude": null,
+        "sunAzimuth": null,
+        "pathWidth": 118,
+        "duration": 92.1,
+        "isLimit": true
+      }
+    ]
+  }
+}
