@@ -146,130 +146,177 @@ h1 span {
     color: #f39c12;
 }
 
-/* Eclipse Animation */
-.eclipse {
-    --eclipse-size: 200px;
-    position: relative;
-    width: var(--eclipse-size);
-    height: var(--eclipse-size);
+:root {
+    --zinc-950: #09090b;
 }
 
-.eclipse .layer {
+/* Body and header darken when eclipse-home is hovered - pure CSS with :has() */
+body:has(.eclipse-home:hover) {
+    background-color: var(--zinc-950);
+}
+
+body:has(.eclipse-home:hover) header {
+    background: var(--zinc-950);
+    border-bottom-color: #222;
+}
+
+/* Eclipse Home Button */
+.eclipse-home {
+    --size: 48px;
+    position: relative;
+    z-index: 9999;
+    display: inline-block;
+    width: var(--size);
+    height: var(--size);
+    cursor: pointer;
+}
+
+.eclipse-home a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/* Sun - always visible, centered */
+.eclipse-home .sun {
+    position: absolute;
+    inset: 10%;
+    border-radius: 50%;
+    background: radial-gradient(circle at 50% 50%,
+        #fff8b0 0%,
+        #ffdd44 30%,
+        #f39c12 60%,
+        #e67e22 80%,
+        transparent 100%
+    );
+    box-shadow:
+        0 0 10px 2px rgba(255, 200, 50, 0.6),
+        0 0 20px 4px rgba(255, 150, 50, 0.3);
+}
+
+/* Moon - overlaps sun, offset in normal state */
+.eclipse-home .moon {
+    position: absolute;
+    inset: 10%;
+    border-radius: 50%;
+    background: var(--zinc-950);
+    transform: translate(-12%, -8%);
+    transition: transform 0.4s ease;
+    z-index: 2;
+}
+
+.eclipse-home:hover .moon {
+    transform: translate(0%, 0%);
+}
+
+/* Corona layers - low opacity by default */
+.eclipse-home .corona {
+    position: absolute;
+    inset: -30%;
+    opacity: 0.1;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.eclipse-home:hover .corona {
+    opacity: 0.75;
+}
+
+.eclipse-home .corona .layer {
     position: absolute;
     inset: 0;
-    border-radius: 50%;
 }
 
-.eclipse .layer-1 {
-    background: repeating-conic-gradient(
-        from 0deg,
-        transparent 0deg 1deg,
-        rgba(255, 200, 100, 0.03) 1deg 2deg
+/* Corona layer 1 - inner glow */
+.eclipse-home .corona .layer-1 {
+    background: radial-gradient(circle at 50% 50%,
+        transparent 17%,
+        rgba(255, 200, 150, 0.45) 19%,
+        rgba(255, 150, 100, 0.2) 25%,
+        transparent 35%
     );
+}
+
+/* Corona layer 2 - outer glow */
+.eclipse-home .corona .layer-2 {
+    background: radial-gradient(circle at 50% 50%,
+        transparent 15%,
+        rgba(255, 185, 147, 0.12) 22%,
+        rgba(255, 220, 180, 0.05) 32%,
+        transparent 40%
+    );
+}
+
+/* Corona layer 3 - rays (masked to circle) */
+.eclipse-home .corona .layer-3 {
     animation: rotate 30s linear infinite;
-}
-
-.eclipse .layer-2 {
     background: repeating-conic-gradient(
-        from 45deg,
-        transparent 0deg 2deg,
-        rgba(255, 180, 80, 0.02) 2deg 4deg
+        from 0deg at 50% 50%,
+        transparent 0%,
+        rgba(255, 248, 176, 0.28) 1.8%,
+        transparent 3.5%
     );
-    animation: rotate 40s linear infinite reverse;
+    mask-image: radial-gradient(circle at 50% 50%, transparent 17%, black 19%, black 36%, transparent 46%);
+    -webkit-mask-image: radial-gradient(circle at 50% 50%, transparent 17%, black 19%, black 36%, transparent 46%);
 }
 
-.eclipse .layer-3 {
+/* Corona layer 4 - more rays, slower (masked to circle) */
+.eclipse-home .corona .layer-4 {
+    animation: rotate 45s linear infinite reverse;
     background: repeating-conic-gradient(
-        from 90deg,
-        transparent 0deg 3deg,
-        rgba(255, 160, 60, 0.025) 3deg 6deg
+        from 30deg at 50% 50%,
+        transparent 0%,
+        rgba(255, 200, 100, 0.18) 2.5%,
+        transparent 5%
     );
-    animation: rotate 25s linear infinite;
+    mask-image: radial-gradient(circle at 50% 50%, transparent 17%, black 19%, black 31%, transparent 43%);
+    -webkit-mask-image: radial-gradient(circle at 50% 50%, transparent 17%, black 19%, black 31%, transparent 43%);
 }
 
-.eclipse .layer-4 {
-    background: radial-gradient(
-        circle at center,
-        transparent 30%,
-        rgba(255, 150, 50, 0.1) 50%,
-        transparent 70%
+/* Corona layer 5 - red/pink rim */
+.eclipse-home .corona .layer-5 {
+    background: radial-gradient(circle at 50% 50%,
+        transparent 16%,
+        rgba(255, 100, 80, 0.32) 18%,
+        rgba(255, 150, 130, 0.1) 21%,
+        transparent 27%
     );
-    animation: rotate 35s linear infinite reverse;
-}
-
-.eclipse .layer-5 {
-    background: radial-gradient(
-        circle at center,
-        transparent 25%,
-        rgba(255, 200, 100, 0.05) 40%,
-        transparent 60%
-    );
-    animation: rotate 20s linear infinite;
-}
-
-.eclipse .layer-6 {
-    background:
-        /* Moon (black center) */
-        radial-gradient(circle at center, #000 0%, #000 28%, transparent 28%),
-        /* Inner corona glow */
-        radial-gradient(circle at center, transparent 26%, rgba(255, 200, 150, 0.4) 28%, rgba(255, 150, 100, 0.2) 35%, transparent 50%),
-        /* Outer corona */
-        radial-gradient(circle at center, transparent 30%, rgba(255, 180, 120, 0.1) 45%, transparent 65%),
-        /* Subtle red rim */
-        radial-gradient(circle at center, transparent 27%, rgba(255, 100, 50, 0.3) 28%, transparent 32%);
 }
 
 @keyframes rotate {
-    to { rotate: 359deg; }
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
-/* Hero Eclipse (homepage) */
+/* Hero Eclipse (homepage) - uses same structure but larger */
 .eclipse-hero {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 3rem 1rem;
-    background: #09090b;
+    background: var(--zinc-950);
 }
 
-.eclipse-hero .eclipse {
-    --eclipse-size: min(300px, 50vw);
+.eclipse-hero .eclipse-home {
+    --size: min(300px, 50vw);
+    cursor: default;
 }
 
-/* Home Button Eclipse */
-.eclipse-home {
-    position: fixed;
-    top: -40px;
-    left: -40px;
-    z-index: 1000;
-    transition: transform 0.4s ease, filter 0.4s ease;
+.eclipse-hero .eclipse-home .moon {
+    transform: translate(0%, 0%);
 }
 
-.eclipse-home .eclipse {
-    --eclipse-size: 120px;
+.eclipse-hero .eclipse-home .corona {
+    opacity: 0.75;
 }
 
-.eclipse-home a {
-    display: block;
-    width: 120px;
-    height: 120px;
-}
-
-.eclipse-home:hover {
-    transform: translate(40px, 40px);
-}
-
-/* Page background transition on eclipse hover */
-body {
-    transition: background-color 0.4s ease;
-}
-
-body.eclipse-hover {
-    background-color: #09090b;
-}
-
-/* Ensure header doesn't overlap with eclipse button */
+/* Header with eclipse button */
 header {
     position: relative;
     z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: background 0.4s ease, border-bottom-color 0.4s ease;
 }
