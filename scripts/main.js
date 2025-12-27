@@ -1,5 +1,35 @@
 import { calculateTotality, ECLIPSE_2026_AUG_12 } from './eclipse-calculator.js';
 
+/**
+ * Process items in chunks, yielding to allow rendering between chunks.
+ * Uses setTimeout(0) to break out of microtask queue and allow paint.
+ * @param {Array} items - Items to process
+ * @param {Function} processor - Function to call for each item
+ * @param {number} chunkSize - Items per chunk
+ * @returns {Promise} Resolves when all items are processed
+ */
+function processInChunks(items, processor, chunkSize = 50) {
+    return new Promise((resolve) => {
+        let index = 0;
+        function processChunk() {
+            const startTime = performance.now();
+            // Process for max 16ms per chunk to maintain 60fps
+            while (index < items.length && (performance.now() - startTime) < 16) {
+                processor(items[index], index);
+                index++;
+            }
+            if (index < items.length) {
+                // Use setTimeout(0) to yield to event loop and allow rendering
+                setTimeout(processChunk, 0);
+            } else {
+                resolve();
+            }
+        }
+        // Start after a brief yield to let initial render complete
+        setTimeout(processChunk, 0);
+    });
+}
+
 // Read configuration from HTML meta tags
 const getMeta = (name, fallback) => {
     const el = document.querySelector(`meta[name="${name}"]`);
@@ -363,11 +393,12 @@ function createCloudOverlayClass(maxCloud) {
     };
 }
 
-// Main initialization
+// Main initialization - progressive loading for performance
 async function initMap() {
     const urlState = readMapStateFromUrl();
     const urlHome = readHomeFromUrl();
 
+    // PHASE 1: Create map immediately (critical path)
     const map = new google.maps.Map(document.getElementById('map'), {
         mapTypeId: 'terrain',
         center: urlState?.center || DEFAULT_CENTER,
@@ -375,25 +406,49 @@ async function initMap() {
         streetViewControl: false,
         fullscreenControl: false,
         mapTypeControl: false,
-        styles: MAP_STYLES
+        styles: MAP_STYLES,
+        restriction: {
+            latLngBounds: {
+                north: REGION_BOUNDS.north,
+                south: REGION_BOUNDS.south,
+                east: REGION_BOUNDS.east,
+                west: REGION_BOUNDS.west
+            },
+            strictBounds: false
+        },
+        minZoom: 6
     });
 
-    const poiIcons = createPoiIcons();
-    const directionsService = new google.maps.DirectionsService();
+    // Yield to allow map to start rendering before loading data
+    await new Promise(resolve => setTimeout(resolve, 0));
 
+    const directionsService = new google.maps.DirectionsService();
+    const geometry = google.maps.geometry.poly;
+
+    // PHASE 2: Load eclipse data and draw centerline (fast)
     const eclipseData = await loadEclipseData();
     const path = eclipseData.path;
     eclipseElements = eclipseData.besselianElements?.elements || ECLIPSE_2026_AUG_12;
-    const poiData = await loadPoi();
-    const cloudData = await loadCloudData();
     const densifiedPath = densifyPath(path, 20);
 
-    // Home location: URL params take priority, then POI with category 'home', then first POI
-    const poiHome = poiData?.points?.find(point => point.category === 'home')
-        || poiData?.points?.[0];
-    const homePoi = urlHome || poiHome || null;
-    const hasHome = homePoi !== null;
+    const centerline = densifiedPath.map(entry => ({
+        lat: entry.central.lat,
+        lng: entry.central.lon
+    }));
 
+    // Draw centerline immediately - critical visual feedback
+    new google.maps.Polyline({
+        path: centerline,
+        strokeColor: '#e74c3c',
+        strokeOpacity: 0.8,
+        strokeWeight: 1,
+        geodesic: false,
+        zIndex: 2,
+        clickable: false,
+        map
+    });
+
+    // PHASE 3: Build path polygon (fast)
     const polygonPoints = densifiedPath.filter(entry =>
         entry.northern?.lat !== null && entry.southern?.lat !== null
     );
@@ -408,12 +463,27 @@ async function initMap() {
         lng: entry.southern.lon
     }));
 
-    const centerline = densifiedPath.map(entry => ({
-        lat: entry.central.lat,
-        lng: entry.central.lon
-    }));
+    const pathPolygon = new google.maps.Polygon({
+        paths: [...northern, ...southern.slice().reverse()],
+        strokeOpacity: 0,
+        strokeWeight: 0,
+        fillColor: '#f39c12',
+        fillOpacity: 0,
+        clickable: false,
+        map
+    });
 
-    // Center map on closest centerline point to home, or fit Spain bounds
+    const pathPolygonLatLon = [
+        ...northern.map(point => ({ lat: point.lat, lon: point.lng })),
+        ...southern.slice().reverse().map(point => ({ lat: point.lat, lon: point.lng }))
+    ];
+
+    // Home location setup
+    let homePoi = urlHome || null;
+    let hasHome = homePoi !== null;
+    const poiIcons = createPoiIcons();
+
+    // Center map on closest centerline point to home, or fit region bounds
     if (!urlState) {
         if (hasHome) {
             const closest = closestCenterlinePoint(homePoi.lat, homePoi.lon, centerline);
@@ -427,233 +497,6 @@ async function initMap() {
             );
             map.fitBounds(bounds);
         }
-    }
-
-    const pathPolygon = new google.maps.Polygon({
-        paths: [...northern, ...southern.slice().reverse()],
-        strokeOpacity: 0,
-        strokeWeight: 0,
-        fillColor: '#f39c12',
-        fillOpacity: 0,
-        clickable: false,
-        map
-    });
-
-    new google.maps.Polyline({
-        path: centerline,
-        strokeColor: '#e74c3c',
-        strokeOpacity: 0.8,
-        strokeWeight: 1,
-        geodesic: false,
-        zIndex: 2,
-        clickable: false,
-        map
-    });
-
-    const geometry = google.maps.geometry.poly;
-    const pathPolygonLatLon = [
-        ...northern.map(point => ({ lat: point.lat, lon: point.lng })),
-        ...southern.slice().reverse().map(point => ({ lat: point.lat, lon: point.lng }))
-    ];
-
-    // Cloud overlay setup
-    if (cloudData?.lat?.length && cloudData?.lon?.length && cloudData?.cfc?.length) {
-        const maxCloud = 100;
-        const step = cloudData.resolution || 0.25;
-        const halfStep = step / 2;
-        const tiles = [];
-        const highlightOverlays = [];
-
-        window.__cloudGrid = {
-            latStart: cloudData.lat[0],
-            lonStart: cloudData.lon[0],
-            step,
-            rows: cloudData.lat.length,
-            cols: cloudData.lon.length,
-            grid: cloudData.cfc
-        };
-
-        // Check if any corner of a tile intersects the path polygon
-        const tileIntersectsPath = (lat, lon) => {
-            const corners = [
-                new google.maps.LatLng(lat + halfStep, lon - halfStep),
-                new google.maps.LatLng(lat + halfStep, lon + halfStep),
-                new google.maps.LatLng(lat - halfStep, lon + halfStep),
-                new google.maps.LatLng(lat - halfStep, lon - halfStep),
-                new google.maps.LatLng(lat, lon)
-            ];
-            return corners.some(corner => geometry.containsLocation(corner, pathPolygon));
-        };
-
-        for (let i = 0; i < cloudData.lat.length; i += 1) {
-            const lat = cloudData.lat[i];
-            const row = cloudData.cfc[i] || [];
-            for (let j = 0; j < cloudData.lon.length; j += 1) {
-                const lon = cloudData.lon[j];
-                const value = row[j];
-                if (!Number.isFinite(value)) continue;
-
-                const location = new google.maps.LatLng(lat, lon);
-                if (polygonPoints.length > 2 && tileIntersectsPath(lat, lon)) {
-                    const totality = calculateTotality(lat, lon, eclipseElements);
-                    const durationSeconds = totality.inTotality ? totality.durationSeconds : 0;
-                    const clearPercent = Math.max(0, Math.min(100, maxCloud - value));
-                    const score = durationSeconds * clearPercent * 2;
-                    tiles.push({
-                        i,
-                        j,
-                        value,
-                        durationSeconds,
-                        score,
-                        location,
-                        bounds: {
-                            north: lat + halfStep,
-                            south: lat - halfStep,
-                            east: lon + halfStep,
-                            west: lon - halfStep
-                        }
-                    });
-                }
-            }
-        }
-
-        const CloudOverlay = createCloudOverlayClass(maxCloud);
-        const cloudOverlay = new CloudOverlay(map, tiles, pathPolygonLatLon);
-
-        const renderCloudOverlay = () => {
-            while (highlightOverlays.length) {
-                const overlay = highlightOverlays.pop();
-                overlay.setMap(null);
-            }
-
-            const bounds = map.getBounds();
-            if (!bounds) return;
-
-            const inViewTiles = tiles.filter(tile => bounds.contains(tile.location));
-            const ranked = inViewTiles.slice().sort((a, b) => b.score - a.score);
-
-            const rankIndex = new Map();
-            ranked.forEach((tile, idx) => {
-                rankIndex.set(`${tile.i},${tile.j}`, idx);
-            });
-
-            ranked.forEach(tile => {
-                const idx = rankIndex.get(`${tile.i},${tile.j}`);
-                const neighbors = [
-                    `${tile.i + 1},${tile.j}`,
-                    `${tile.i - 1},${tile.j}`,
-                    `${tile.i},${tile.j + 1}`,
-                    `${tile.i},${tile.j - 1}`,
-                    `${tile.i + 1},${tile.j + 1}`,
-                    `${tile.i + 1},${tile.j - 1}`,
-                    `${tile.i - 1},${tile.j + 1}`,
-                    `${tile.i - 1},${tile.j - 1}`
-                ];
-                const higherAdjacent = neighbors.reduce((count, key) => {
-                    const neighborIdx = rankIndex.get(key);
-                    if (neighborIdx !== undefined && neighborIdx < idx) {
-                        return count + 1;
-                    }
-                    return count;
-                }, 0);
-                const penaltyFactor = Math.max(0, 1 - higherAdjacent * 0.1);
-                tile.adjustedScore = tile.score * penaltyFactor;
-            });
-
-            const highlighted = ranked
-                .slice()
-                .sort((a, b) => b.adjustedScore - a.adjustedScore)
-                .slice(0, 10);
-
-            const highlightOrder = new Map();
-            highlighted.forEach((tile, idx) => {
-                highlightOrder.set(`${tile.i},${tile.j}`, idx);
-            });
-
-            cloudOverlay.draw();
-
-            const highlightedMap = new Map();
-            highlighted.forEach(tile => {
-                highlightedMap.set(`${tile.i},${tile.j}`, tile);
-            });
-
-            const visited = new Set();
-            const radiusMeters = (step * 111320) / 2;
-
-            const neighborKeys = (tile) => ([
-                `${tile.i + 1},${tile.j}`,
-                `${tile.i - 1},${tile.j}`,
-                `${tile.i},${tile.j + 1}`,
-                `${tile.i},${tile.j - 1}`,
-                `${tile.i + 1},${tile.j + 1}`,
-                `${tile.i + 1},${tile.j - 1}`,
-                `${tile.i - 1},${tile.j + 1}`,
-                `${tile.i - 1},${tile.j - 1}`
-            ]);
-
-            highlighted.forEach(tile => {
-                const key = `${tile.i},${tile.j}`;
-                if (visited.has(key)) return;
-
-                const queue = [tile];
-                visited.add(key);
-                const cluster = [];
-
-                while (queue.length) {
-                    const current = queue.pop();
-                    cluster.push(current);
-                    neighborKeys(current).forEach(neighborKey => {
-                        if (visited.has(neighborKey)) return;
-                        const neighbor = highlightedMap.get(neighborKey);
-                        if (neighbor) {
-                            visited.add(neighborKey);
-                            queue.push(neighbor);
-                        }
-                    });
-                }
-
-                const avg = cluster.reduce((acc, item) => {
-                    acc.lat += item.location.lat();
-                    acc.lon += item.location.lng();
-                    acc.rankSum += (highlightOrder.get(`${item.i},${item.j}`) ?? 9);
-                    return acc;
-                }, { lat: 0, lon: 0, rankSum: 0 });
-
-                const centerLat = avg.lat / cluster.length;
-                const centerLon = avg.lon / cluster.length;
-                const avgRank = avg.rankSum / cluster.length;
-                const rankOpacity = 0.3 + (1 - avgRank / 9) * 0.5;
-
-                const circle = new google.maps.Circle({
-                    map,
-                    center: { lat: centerLat, lng: centerLon },
-                    radius: radiusMeters,
-                    strokeColor: '#e2e8f0',
-                    strokeOpacity: rankOpacity,
-                    strokeWeight: 2,
-                    fillOpacity: 0,
-                    clickable: false,
-                    zIndex: 3
-                });
-                highlightOverlays.push(circle);
-            });
-        };
-
-        renderCloudOverlay();
-        map.addListener('idle', renderCloudOverlay);
-    }
-
-    // POI markers
-    if (poiData?.points?.length) {
-        poiData.points.forEach(point => {
-            const icon = poiIcons[point.category] || poiIcons.town;
-            new google.maps.Marker({
-                map,
-                position: { lat: point.lat, lng: point.lon },
-                title: point.name,
-                icon
-            });
-        });
     }
 
     // Update locked location links
@@ -671,7 +514,6 @@ async function initMap() {
         links.push(`<a href="${shadowUrl}" target="_blank" rel="noopener">Shadowmap</a>`);
 
         if (!hasHome) {
-            // Calculate check-in (day before) and check-out (day after) from eclipse date
             const eclipseDate = new Date(eclipseElements.date);
             const checkinDate = new Date(eclipseDate);
             checkinDate.setDate(eclipseDate.getDate() - 1);
@@ -741,7 +583,7 @@ async function initMap() {
         }
     };
 
-    // Map event listeners
+    // Set up map event listeners immediately for responsiveness
     map.addListener('mousemove', (event) => {
         if (locationLocked) return;
 
@@ -781,6 +623,255 @@ async function initMap() {
     });
 
     map.addListener('idle', () => writeMapStateToUrl(map));
+
+    // PHASE 4: Load POI data asynchronously, update home if needed
+    loadPoi().then(poiData => {
+        if (poiData?.points?.length) {
+            // Update home if not set from URL
+            if (!homePoi) {
+                const poiHome = poiData.points.find(point => point.category === 'home')
+                    || poiData.points[0];
+                if (poiHome) {
+                    homePoi = poiHome;
+                    hasHome = true;
+                    // Re-center if no URL state
+                    if (!urlState) {
+                        const closest = closestCenterlinePoint(homePoi.lat, homePoi.lon, centerline);
+                        if (closest) {
+                            map.setCenter({ lat: closest.lat, lng: closest.lng });
+                        }
+                    }
+                }
+            }
+
+            // Add POI markers
+            poiData.points.forEach(point => {
+                const icon = poiIcons[point.category] || poiIcons.town;
+                new google.maps.Marker({
+                    map,
+                    position: { lat: point.lat, lng: point.lon },
+                    title: point.name,
+                    icon
+                });
+            });
+        }
+    });
+
+    // PHASE 5: Load cloud data and process in chunks (heavy computation)
+    loadCloudData().then(cloudData => {
+        if (!cloudData?.lat?.length || !cloudData?.lon?.length || !cloudData?.cfc?.length) {
+            return;
+        }
+
+        const maxCloud = 100;
+        const step = cloudData.resolution || 0.25;
+        const halfStep = step / 2;
+        const tiles = [];
+        const highlightOverlays = [];
+
+        window.__cloudGrid = {
+            latStart: cloudData.lat[0],
+            lonStart: cloudData.lon[0],
+            step,
+            rows: cloudData.lat.length,
+            cols: cloudData.lon.length,
+            grid: cloudData.cfc
+        };
+
+        // Use REGION_BOUNDS to limit processing to visible area (major optimization!)
+        // This reduces cells from ~127k to ~2.5k for Spain
+        const regionMinLat = REGION_BOUNDS.south - halfStep;
+        const regionMaxLat = REGION_BOUNDS.north + halfStep;
+        const regionMinLon = REGION_BOUNDS.west - halfStep;
+        const regionMaxLon = REGION_BOUNDS.east + halfStep;
+
+        // Check if tile intersects path polygon (center or any corner)
+        const tileIntersectsPath = (lat, lon) => {
+            // Check center first (most common case for tiles fully inside)
+            const center = new google.maps.LatLng(lat, lon);
+            if (geometry.containsLocation(center, pathPolygon)) return true;
+            // Check corners for tiles at the border (needed for smooth edges)
+            const corners = [
+                new google.maps.LatLng(lat + halfStep, lon - halfStep),
+                new google.maps.LatLng(lat + halfStep, lon + halfStep),
+                new google.maps.LatLng(lat - halfStep, lon - halfStep),
+                new google.maps.LatLng(lat - halfStep, lon + halfStep)
+            ];
+            return corners.some(corner => geometry.containsLocation(corner, pathPolygon));
+        };
+
+        // Build list of cells within visible region (fast - no geometry checks)
+        const cellsInRegion = [];
+        for (let i = 0; i < cloudData.lat.length; i += 1) {
+            const lat = cloudData.lat[i];
+            if (lat < regionMinLat || lat > regionMaxLat) continue;
+            const row = cloudData.cfc[i] || [];
+            for (let j = 0; j < cloudData.lon.length; j += 1) {
+                const lon = cloudData.lon[j];
+                if (lon < regionMinLon || lon > regionMaxLon) continue;
+                const value = row[j];
+                if (!Number.isFinite(value)) continue;
+                cellsInRegion.push({ i, j, lat, lon, value });
+            }
+        }
+
+        // Phase 1: Filter cells that intersect path (chunked - geometry checks)
+        const candidates = [];
+        processInChunks(cellsInRegion, (cell) => {
+            if (polygonPoints.length > 2 && tileIntersectsPath(cell.lat, cell.lon)) {
+                candidates.push(cell);
+            }
+        }, 200).then(() => {
+            // Phase 2: Calculate totality for each candidate (chunked)
+            return processInChunks(candidates, (candidate) => {
+                const { i, j, lat, lon, value } = candidate;
+                const totality = calculateTotality(lat, lon, eclipseElements);
+                const durationSeconds = totality.inTotality ? totality.durationSeconds : 0;
+                const clearPercent = Math.max(0, Math.min(100, maxCloud - value));
+                const score = durationSeconds * clearPercent * 2;
+                tiles.push({
+                    i,
+                    j,
+                    value,
+                    durationSeconds,
+                    score,
+                    location: new google.maps.LatLng(lat, lon),
+                    bounds: {
+                        north: lat + halfStep,
+                        south: lat - halfStep,
+                        east: lon + halfStep,
+                        west: lon - halfStep
+                    }
+                });
+            }, 100);
+        }).then(() => {
+            // All tiles processed, create overlay
+            const CloudOverlay = createCloudOverlayClass(maxCloud);
+            const cloudOverlay = new CloudOverlay(map, tiles, pathPolygonLatLon);
+
+            const renderCloudOverlay = () => {
+                while (highlightOverlays.length) {
+                    const overlay = highlightOverlays.pop();
+                    overlay.setMap(null);
+                }
+
+                const bounds = map.getBounds();
+                if (!bounds) return;
+
+                const inViewTiles = tiles.filter(tile => bounds.contains(tile.location));
+                const ranked = inViewTiles.slice().sort((a, b) => b.score - a.score);
+
+                const rankIndex = new Map();
+                ranked.forEach((tile, idx) => {
+                    rankIndex.set(`${tile.i},${tile.j}`, idx);
+                });
+
+                ranked.forEach(tile => {
+                    const idx = rankIndex.get(`${tile.i},${tile.j}`);
+                    const neighbors = [
+                        `${tile.i + 1},${tile.j}`,
+                        `${tile.i - 1},${tile.j}`,
+                        `${tile.i},${tile.j + 1}`,
+                        `${tile.i},${tile.j - 1}`,
+                        `${tile.i + 1},${tile.j + 1}`,
+                        `${tile.i + 1},${tile.j - 1}`,
+                        `${tile.i - 1},${tile.j + 1}`,
+                        `${tile.i - 1},${tile.j - 1}`
+                    ];
+                    const higherAdjacent = neighbors.reduce((count, key) => {
+                        const neighborIdx = rankIndex.get(key);
+                        if (neighborIdx !== undefined && neighborIdx < idx) {
+                            return count + 1;
+                        }
+                        return count;
+                    }, 0);
+                    const penaltyFactor = Math.max(0, 1 - higherAdjacent * 0.1);
+                    tile.adjustedScore = tile.score * penaltyFactor;
+                });
+
+                const highlighted = ranked
+                    .slice()
+                    .sort((a, b) => b.adjustedScore - a.adjustedScore)
+                    .slice(0, 10);
+
+                const highlightOrder = new Map();
+                highlighted.forEach((tile, idx) => {
+                    highlightOrder.set(`${tile.i},${tile.j}`, idx);
+                });
+
+                cloudOverlay.draw();
+
+                const highlightedMap = new Map();
+                highlighted.forEach(tile => {
+                    highlightedMap.set(`${tile.i},${tile.j}`, tile);
+                });
+
+                const visited = new Set();
+                const radiusMeters = (step * 111320) / 2;
+
+                const neighborKeys = (tile) => ([
+                    `${tile.i + 1},${tile.j}`,
+                    `${tile.i - 1},${tile.j}`,
+                    `${tile.i},${tile.j + 1}`,
+                    `${tile.i},${tile.j - 1}`,
+                    `${tile.i + 1},${tile.j + 1}`,
+                    `${tile.i + 1},${tile.j - 1}`,
+                    `${tile.i - 1},${tile.j + 1}`,
+                    `${tile.i - 1},${tile.j - 1}`
+                ]);
+
+                highlighted.forEach(tile => {
+                    const key = `${tile.i},${tile.j}`;
+                    if (visited.has(key)) return;
+
+                    const queue = [tile];
+                    visited.add(key);
+                    const cluster = [];
+
+                    while (queue.length) {
+                        const current = queue.pop();
+                        cluster.push(current);
+                        neighborKeys(current).forEach(neighborKey => {
+                            if (visited.has(neighborKey)) return;
+                            const neighbor = highlightedMap.get(neighborKey);
+                            if (neighbor) {
+                                visited.add(neighborKey);
+                                queue.push(neighbor);
+                            }
+                        });
+                    }
+
+                    const avg = cluster.reduce((acc, item) => {
+                        acc.lat += item.location.lat();
+                        acc.lon += item.location.lng();
+                        acc.rankSum += (highlightOrder.get(`${item.i},${item.j}`) ?? 9);
+                        return acc;
+                    }, { lat: 0, lon: 0, rankSum: 0 });
+
+                    const centerLat = avg.lat / cluster.length;
+                    const centerLon = avg.lon / cluster.length;
+                    const avgRank = avg.rankSum / cluster.length;
+                    const rankOpacity = 0.3 + (1 - avgRank / 9) * 0.5;
+
+                    const circle = new google.maps.Circle({
+                        map,
+                        center: { lat: centerLat, lng: centerLon },
+                        radius: radiusMeters,
+                        strokeColor: '#e2e8f0',
+                        strokeOpacity: rankOpacity,
+                        strokeWeight: 2,
+                        fillOpacity: 0,
+                        clickable: false,
+                        zIndex: 3
+                    });
+                    highlightOverlays.push(circle);
+                });
+            };
+
+            renderCloudOverlay();
+            map.addListener('idle', renderCloudOverlay);
+        });
+    });
 }
 
 // Export for Google Maps callback
