@@ -1,11 +1,27 @@
 import { calculateTotality, ECLIPSE_2026_AUG_12 } from './eclipse-calculator.js';
 
-const SPAIN_BOUNDS = {
-    north: 44.8,
-    south: 35.3,
-    west: -10.8,
-    east: 5.6
+// Read configuration from HTML meta tags
+const getMeta = (name, fallback) => {
+    const el = document.querySelector(`meta[name="${name}"]`);
+    return el ? el.content : fallback;
 };
+
+const REGION_BOUNDS = {
+    north: parseFloat(getMeta('bounds-north', '44.8')),
+    south: parseFloat(getMeta('bounds-south', '35.3')),
+    west: parseFloat(getMeta('bounds-west', '-10.8')),
+    east: parseFloat(getMeta('bounds-east', '5.6'))
+};
+const DEFAULT_CENTER = {
+    lat: parseFloat(getMeta('center-lat', '40.3')),
+    lng: parseFloat(getMeta('center-lng', '-3.7'))
+};
+const DEFAULT_ZOOM = parseInt(getMeta('default-zoom', '8'), 10);
+const DATA_PATH = getMeta('data-path', '.');
+const ECLIPSE_YEAR = getMeta('eclipse-year', '2026');
+
+// Will be populated with Besselian elements after loading
+let eclipseElements = null;
 
 const MAP_STYLES = [
     { elementType: 'geometry', stylers: [{ color: '#1a2136' }] },
@@ -125,27 +141,28 @@ function densifyPath(path, maxKmStep = 50) {
 }
 
 // Data loading
-async function loadEclipsePath() {
-    const response = await fetch('./data/eclipse-2026.json');
+async function loadEclipseData() {
+    const response = await fetch(`${DATA_PATH}/data/eclipse-${ECLIPSE_YEAR}.json`);
     if (!response.ok) {
-        throw new Error('Failed to load eclipse path data');
+        throw new Error('Failed to load eclipse data');
     }
-    const data = await response.json();
-    return data.path;
+    return response.json();
 }
 
 async function loadPoi() {
-    const response = await fetch('./data/poi-2026.json');
+    const response = await fetch(`${DATA_PATH}/data/poi-${ECLIPSE_YEAR}.json`);
     if (!response.ok) {
-        throw new Error('Failed to load POI data');
+        // POI is optional
+        return { points: [] };
     }
     return response.json();
 }
 
 async function loadCloudData() {
-    const response = await fetch('./data/cloud-2026.json');
+    const response = await fetch(`${DATA_PATH}/data/cloud-${ECLIPSE_YEAR}.json`);
     if (!response.ok) {
-        throw new Error('Failed to load cloud data');
+        // Cloud data is optional
+        return null;
     }
     return response.json();
 }
@@ -178,7 +195,7 @@ function updateDurationDisplay(lat, lon, inPath) {
         durationEl.textContent = '-';
         return;
     }
-    const result = calculateTotality(lat, lon, ECLIPSE_2026_AUG_12);
+    const result = calculateTotality(lat, lon, eclipseElements);
     const cloudChance = getCloudChance(lat, lon);
     if (cloudChance === null) {
         durationEl.textContent = formatDuration(result);
@@ -353,8 +370,8 @@ async function initMap() {
 
     const map = new google.maps.Map(document.getElementById('map'), {
         mapTypeId: 'terrain',
-        center: urlState?.center || { lat: 40.3, lng: -3.7 },
-        zoom: urlState?.zoom || 8,
+        center: urlState?.center || DEFAULT_CENTER,
+        zoom: urlState?.zoom || DEFAULT_ZOOM,
         streetViewControl: false,
         fullscreenControl: false,
         mapTypeControl: false,
@@ -364,7 +381,9 @@ async function initMap() {
     const poiIcons = createPoiIcons();
     const directionsService = new google.maps.DirectionsService();
 
-    const path = await loadEclipsePath();
+    const eclipseData = await loadEclipseData();
+    const path = eclipseData.path;
+    eclipseElements = eclipseData.besselianElements?.elements || ECLIPSE_2026_AUG_12;
     const poiData = await loadPoi();
     const cloudData = await loadCloudData();
     const densifiedPath = densifyPath(path, 20);
@@ -403,8 +422,8 @@ async function initMap() {
             }
         } else {
             const bounds = new google.maps.LatLngBounds(
-                { lat: SPAIN_BOUNDS.south, lng: SPAIN_BOUNDS.west },
-                { lat: SPAIN_BOUNDS.north, lng: SPAIN_BOUNDS.east }
+                { lat: REGION_BOUNDS.south, lng: REGION_BOUNDS.west },
+                { lat: REGION_BOUNDS.north, lng: REGION_BOUNDS.east }
             );
             map.fitBounds(bounds);
         }
@@ -476,7 +495,7 @@ async function initMap() {
 
                 const location = new google.maps.LatLng(lat, lon);
                 if (polygonPoints.length > 2 && tileIntersectsPath(lat, lon)) {
-                    const totality = calculateTotality(lat, lon, ECLIPSE_2026_AUG_12);
+                    const totality = calculateTotality(lat, lon, eclipseElements);
                     const durationSeconds = totality.inTotality ? totality.durationSeconds : 0;
                     const clearPercent = Math.max(0, Math.min(100, maxCloud - value));
                     const score = durationSeconds * clearPercent * 2;
@@ -643,7 +662,7 @@ async function initMap() {
         locationCoordsEl.textContent = `${lat.toFixed(2)}°N, ${Math.abs(lon).toFixed(2)}°${lonDir}`;
         locationLabelEl.textContent = 'Locked Location';
 
-        const defaultTime = `${ECLIPSE_2026_AUG_12.date}T18:00:00Z`;
+        const defaultTime = `${eclipseElements.date}T18:00:00Z`;
         const midTime = result?.mid || defaultTime;
         const shadowTime = new Date(midTime).getTime();
         const shadowUrl = `https://app.shadowmap.org/?lat=${lat.toFixed(5)}&lng=${lon.toFixed(5)}&zoom=12.5&basemap=map&hud=true&time=${shadowTime}`;
@@ -652,8 +671,14 @@ async function initMap() {
         links.push(`<a href="${shadowUrl}" target="_blank" rel="noopener">Shadowmap</a>`);
 
         if (!hasHome) {
-            const checkin = '2026-08-11';
-            const checkout = '2026-08-13';
+            // Calculate check-in (day before) and check-out (day after) from eclipse date
+            const eclipseDate = new Date(eclipseElements.date);
+            const checkinDate = new Date(eclipseDate);
+            checkinDate.setDate(eclipseDate.getDate() - 1);
+            const checkoutDate = new Date(eclipseDate);
+            checkoutDate.setDate(eclipseDate.getDate() + 1);
+            const checkin = checkinDate.toISOString().split('T')[0];
+            const checkout = checkoutDate.toISOString().split('T')[0];
             const latStr = lat.toFixed(4);
             const lonStr = lon.toFixed(4);
             const pathCoord = `${latStr}-${lonStr}`;
@@ -745,7 +770,7 @@ async function initMap() {
     map.addListener('click', (event) => {
         const lat = event.latLng.lat();
         const lon = event.latLng.lng();
-        const result = calculateTotality(lat, lon, ECLIPSE_2026_AUG_12);
+        const result = calculateTotality(lat, lon, eclipseElements);
         locationLocked = true;
 
         inPathEl.textContent = result.inTotality ? 'Yes' : 'No';

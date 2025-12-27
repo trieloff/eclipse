@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 Solar Eclipse - Spain</title>
+
+    <!-- Region configuration -->
+    <meta name="bounds-north" content="44.8">
+    <meta name="bounds-south" content="35.3">
+    <meta name="bounds-west" content="-10.8">
+    <meta name="bounds-east" content="5.6">
+    <meta name="center-lat" content="40.3">
+    <meta name="center-lng" content="-3.7">
+    <meta name="default-zoom" content="8">
+    <meta name="data-path" content="..">
+    <meta name="eclipse-year" content="2026">
+
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+    <header>
+        <h1>Total Solar Eclipse <span>August 12, 2026</span> - Spain</h1>
+    </header>
+
+    <div class="container">
+        <div class="map-container">
+            <div id="map"></div>
+        </div>
+
+        <div class="info-panel">
+            <h2>Eclipse Information</h2>
+            <div class="info-content">
+                <div class="info-item" id="location-box" style="cursor: pointer;">
+                    <label id="location-label">Location</label>
+                    <div class="value" id="location-coords">Move cursor over map</div>
+                </div>
+                <div class="info-item">
+                    <label>In Path of Totality</label>
+                    <div class="value" id="in-path">-</div>
+                </div>
+                <div class="info-item">
+                    <label>Estimated Duration</label>
+                    <div class="value highlight" id="duration">-</div>
+                </div>
+                <div class="info-item">
+                    <label id="distance-label">Distance</label>
+                    <div class="value" id="distance">-</div>
+                </div>
+                <div class="info-item">
+                    <label>Links</label>
+                    <div class="value" id="locked-links">-</div>
+                </div>
+            </div>
+
+            <p class="instructions">
+                Data: <a href="https://eclipse.gsfc.nasa.gov/">NASA GSFC</a> · <a href="https://www.cmsaf.eu/">CM SAF/EUMETSAT</a> · <a href="https://github.com/trieloff/eclipse">GitHub</a>
+            </p>
+        </div>
+    </div>
+
+    <script type="module" src="../scripts/main.js"></script>
+
+    <script>
+        window.initMap = () => {
+            if (window.__initMapImpl) {
+                window.__initMapImpl();
+            } else {
+                window.__initMapPending = true;
+            }
+        };
+    </script>
+
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC80WmdKTX5sQVl1_jUEn-oDd17h8XzHqA&libraries=geometry&callback=initMap&loading=async"
+        async
+        defer
+    ></script>
+</body>
+</html>

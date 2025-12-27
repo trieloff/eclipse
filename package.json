@@ -9,8 +9,12 @@
     "fetch-path": "node scripts/fetch-eclipse-path.js",
     "fetch-2026": "node scripts/fetch-eclipse-path.js https://eclipse.gsfc.nasa.gov/SEpath/SEpath2001/SE2026Aug12Tpath.html > data/eclipse-2026.json",
     "fetch-2027": "node scripts/fetch-eclipse-path.js https://eclipse.gsfc.nasa.gov/SEpath/SEpath2001/SE2027Aug02Tpath.html > data/eclipse-2027.json",
+    "fetch-2028": "node scripts/fetch-eclipse-path.js https://eclipse.gsfc.nasa.gov/SEpath/SEpath2001/SE2028Jul22Tpath.html > data/eclipse-2028.json",
+    "fetch-2030": "node scripts/fetch-eclipse-path.js https://eclipse.gsfc.nasa.gov/SEpath/SEpath2001/SE2030Nov25Tpath.html > data/eclipse-2030.json",
     "cloud-2026": "node scripts/build-cloud-climatology.js 2026",
-    "cloud-2027": "node scripts/build-cloud-climatology.js 2027"
+    "cloud-2027": "node scripts/build-cloud-climatology.js 2027",
+    "cloud-2028": "node scripts/build-cloud-climatology.js 2028",
+    "cloud-2030": "node scripts/build-cloud-climatology.js 2030"
   },
   "devDependencies": {
     "live-server": "^1.2.2",

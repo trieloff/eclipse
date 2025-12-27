@@ -3,66 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2026 Solar Eclipse - Spain</title>
-    <link rel="stylesheet" href="./styles/main.css">
+    <title>Upcoming Solar Eclipses</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .container {
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .eclipse-list {
+            width: 100%;
+        }
+        .eclipse-year {
+            margin: 2rem 0 1rem;
+            font-size: 1.5rem;
+            color: #f39c12;
+            border-bottom: 1px solid #2c3755;
+            padding-bottom: 0.5rem;
+        }
+        .eclipse-card {
+            background: #1a2136;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .eclipse-card h3 {
+            margin: 0 0 0.5rem;
+            color: #d9e3f0;
+        }
+        .eclipse-card .date {
+            color: #9fb0c7;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        .eclipse-card .regions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .eclipse-card .region-link {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: #253454;
+            color: #67e8f9;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+        .eclipse-card .region-link:hover {
+            background: #32466a;
+        }
+        .info-panel {
+            position: static;
+            width: 100%;
+            max-width: none;
+            background: transparent;
+            box-shadow: none;
+        }
+        .instructions {
+            text-align: center;
+            margin-top: 2rem;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Total Solar Eclipse <span>August 12, 2026</span> - Spain</h1>
+        <h1>Upcoming Solar Eclipses</h1>
     </header>
 
     <div class="container">
-        <div class="map-container">
-            <div id="map"></div>
-        </div>
-
-        <div class="info-panel">
-            <h2>Eclipse Information</h2>
-            <div class="info-content">
-                <div class="info-item" id="location-box" style="cursor: pointer;">
-                    <label id="location-label">Location</label>
-                    <div class="value" id="location-coords">Move cursor over map</div>
-                </div>
-                <div class="info-item">
-                    <label>In Path of Totality</label>
-                    <div class="value" id="in-path">-</div>
-                </div>
-                <div class="info-item">
-                    <label>Estimated Duration</label>
-                    <div class="value highlight" id="duration">-</div>
-                </div>
-                <div class="info-item">
-                    <label id="distance-label">Distance</label>
-                    <div class="value" id="distance">-</div>
-                </div>
-                <div class="info-item">
-                    <label>Links</label>
-                    <div class="value" id="locked-links">-</div>
+        <div class="eclipse-list">
+            <h2 class="eclipse-year">2026</h2>
+            <div class="eclipse-card">
+                <h3>Total Solar Eclipse</h3>
+                <div class="date">August 12, 2026</div>
+                <div class="regions">
+                    <a href="2026/spain.html" class="region-link">Spain</a>
+                    <a href="2026/iceland.html" class="region-link">Iceland</a>
                 </div>
             </div>
 
+            <h2 class="eclipse-year">2027</h2>
+            <div class="eclipse-card">
+                <h3>Total Solar Eclipse</h3>
+                <div class="date">August 2, 2027</div>
+                <div class="regions">
+                    <a href="2027/morocco.html" class="region-link">Morocco</a>
+                    <a href="2027/tunisia.html" class="region-link">Tunisia</a>
+                    <a href="2027/egypt.html" class="region-link">Egypt</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-panel">
             <p class="instructions">
                 Data: <a href="https://eclipse.gsfc.nasa.gov/">NASA GSFC</a> · <a href="https://www.cmsaf.eu/">CM SAF/EUMETSAT</a> · <a href="https://github.com/trieloff/eclipse">GitHub</a>
             </p>
         </div>
     </div>
-
-    <script type="module" src="./scripts/main.js"></script>
-
-    <script>
-        window.initMap = () => {
-            if (window.__initMapImpl) {
-                window.__initMapImpl();
-            } else {
-                window.__initMapPending = true;
-            }
-        };
-    </script>
-
-    <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC80WmdKTX5sQVl1_jUEn-oDd17h8XzHqA&libraries=geometry&callback=initMap&loading=async"
-        async
-        defer
-    ></script>
 </body>
 </html>

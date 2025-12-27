@@ -203,11 +203,16 @@ function parseEclipsePathHtml(html, url = null) {
       idx += 4;
     }
 
-    const southern = {
-      lat: parseCoordinate(`${tokens[idx]} ${tokens[idx + 1]}`),
-      lon: parseCoordinate(`${tokens[idx + 2]} ${tokens[idx + 3]}`)
-    };
-    idx += 4;
+    let southern = { lat: null, lon: null };
+    if (tokens[idx] === '-' && tokens[idx + 1] === '-') {
+      idx += 2;
+    } else {
+      southern = {
+        lat: parseCoordinate(`${tokens[idx]} ${tokens[idx + 1]}`),
+        lon: parseCoordinate(`${tokens[idx + 2]} ${tokens[idx + 3]}`)
+      };
+      idx += 4;
+    }
 
     const central = {
       lat: parseCoordinate(`${tokens[idx]} ${tokens[idx + 1]}`),
