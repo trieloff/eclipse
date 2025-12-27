@@ -6,52 +6,69 @@
  * a climatology for the eclipse path region.
  *
  * Usage:
- *   node scripts/build-cloud-climatology.js
+ *   node scripts/build-cloud-climatology.js <year>
+ *   node scripts/build-cloud-climatology.js 2026
+ *   node scripts/build-cloud-climatology.js 2027
  *
  * Environment variables:
  *   EUMETSAT_KEY    - API consumer key
  *   EUMETSAT_SECRET - API consumer secret
  *
  * Output:
- *   data/cloud-cover/climatology-grid.json - Full grid data
- *   data/cloud-cover/climatology-path.json - Path-only samples
+ *   data/cloud-{year}.json - Cloud climatology for eclipse path
  *
  * Attribution: CM SAF/EUMETSAT (CLARA-A3)
  */
 
 import fs from 'fs';
 import path from 'path';
-import { calculateTotality, ECLIPSE_2026_AUG_12 } from './eclipse-calculator.js';
+import { calculateTotality, loadEclipseDataSync } from './eclipse-calculator.js';
 
 const EUMETSAT_TOKEN_URL = 'https://api.eumetsat.int/token';
 const EUMETSAT_SEARCH_URL = 'https://api.eumetsat.int/data/search-products/1.0.0/os';
 const EUMETSAT_DOWNLOAD_URL = 'https://api.eumetsat.int/data/download/1.0.0';
 const COLLECTION_ID = 'EO:EUM:DAT:0874';
 
-// Configuration
-const CONFIG = {
-  // Eclipse year (for output file naming)
-  eclipseYear: 2026,
-  eclipseMonth: 8,
-  eclipseDay: 12,
+/**
+ * Build configuration from eclipse year
+ * @param {number} year - Eclipse year
+ * @returns {Object} Configuration object
+ */
+function buildConfig(year) {
+  // Load eclipse data to get the date
+  const eclipseData = loadEclipseDataSync(year);
+  const [yearStr, monthStr, dayStr] = eclipseData.date.split('-');
 
-  // Date range: +/- 10 days around eclipse day
-  dayRange: 10,
+  return {
+    // Eclipse year (for output file naming)
+    eclipseYear: parseInt(yearStr),
+    eclipseMonth: parseInt(monthStr),
+    eclipseDay: parseInt(dayStr),
 
-  // Year range for climatology
-  startYear: 2002,
-  endYear: 2020,
+    // Date range: +/- 10 days around eclipse day
+    dayRange: 10,
 
-  // Grid resolution (matches CLARA-A3)
-  gridResolution: 0.25,
+    // Year range for climatology
+    startYear: 2002,
+    endYear: 2020,
 
-  // Padding around path (in grid cells) - cells within this distance of path are included
-  cellPadding: 8,  // 8 cells = 2 degrees at 0.25° resolution
+    // Grid resolution (matches CLARA-A3)
+    gridResolution: 0.25,
 
-  // Output paths
-  outputDir: 'data',
-  cacheDir: 'data/cloud-cover/daily-cache'
-};
+    // Padding around path (in grid cells) - cells within this distance of path are included
+    cellPadding: 8,  // 8 cells = 2 degrees at 0.25° resolution
+
+    // Output paths
+    outputDir: 'data',
+    cacheDir: 'data/cloud-cover/daily-cache',
+
+    // Eclipse data for path calculations
+    eclipseElements: eclipseData
+  };
+}
+
+// Default configuration (will be overwritten in main)
+let CONFIG = null;
 
 
 /**
@@ -110,20 +127,27 @@ async function downloadFile(token, productId, outputPath) {
 
 /**
  * Generate list of dates to download
+ * Handles month boundaries correctly using Date objects
  */
 function getDateList() {
   const dates = [];
-  const startDay = CONFIG.eclipseDay - CONFIG.dayRange;
-  const endDay = CONFIG.eclipseDay + CONFIG.dayRange;
-  const month = CONFIG.eclipseMonth.toString().padStart(2, '0');
 
   for (let year = CONFIG.startYear; year <= CONFIG.endYear; year++) {
-    for (let day = startDay; day <= endDay; day++) {
-      const dayStr = day.toString().padStart(2, '0');
+    // Create base date for this year with the eclipse month/day
+    const baseDate = new Date(Date.UTC(year, CONFIG.eclipseMonth - 1, CONFIG.eclipseDay));
+
+    for (let offset = -CONFIG.dayRange; offset <= CONFIG.dayRange; offset++) {
+      const date = new Date(baseDate);
+      date.setUTCDate(date.getUTCDate() + offset);
+
+      const y = date.getUTCFullYear();
+      const m = (date.getUTCMonth() + 1).toString().padStart(2, '0');
+      const d = date.getUTCDate().toString().padStart(2, '0');
+
       dates.push({
-        year,
-        date: `${year}-${month}-${dayStr}`,
-        productId: `CFCdm${year}${month}${dayStr}000000319AVPOS01GL`
+        year: y,
+        date: `${y}-${m}-${d}`,
+        productId: `CFCdm${y}${m}${d}000000319AVPOS01GL`
       });
     }
   }
@@ -172,7 +196,7 @@ async function downloadAllFiles(token) {
  * Check if a grid cell touches the path of totality
  * Tests all 4 corners of the cell
  */
-function cellTouchesPath(lat, lon, resolution) {
+function cellTouchesPath(lat, lon, resolution, eclipseElements) {
   const corners = [
     [lat, lon],                           // SW
     [lat + resolution, lon],              // NW
@@ -181,7 +205,7 @@ function cellTouchesPath(lat, lon, resolution) {
   ];
 
   for (const [clat, clon] of corners) {
-    const result = calculateTotality(clat, clon, ECLIPSE_2026_AUG_12);
+    const result = calculateTotality(clat, clon, eclipseElements);
     if (result.inTotality) {
       return true;
     }
@@ -196,6 +220,7 @@ function cellTouchesPath(lat, lon, resolution) {
 function buildPathMask() {
   const resolution = CONFIG.gridResolution;
   const padding = CONFIG.cellPadding;
+  const eclipseElements = CONFIG.eclipseElements;
 
   console.error('Scanning global grid for cells touching path of totality...');
 
@@ -203,10 +228,10 @@ function buildPathMask() {
   const pathCells = new Set();
 
   // Scan the globe at grid resolution
-  // Only scan latitudes where eclipse is possible (35-90°N for 2026 eclipse)
-  for (let lat = 35; lat < 90; lat += resolution) {
+  // Scan full latitude range (-90 to 90) to support any eclipse
+  for (let lat = -90; lat < 90; lat += resolution) {
     for (let lon = -180; lon < 180; lon += resolution) {
-      if (cellTouchesPath(lat, lon, resolution)) {
+      if (cellTouchesPath(lat, lon, resolution, eclipseElements)) {
         pathCells.add(`${lat.toFixed(3)},${lon.toFixed(3)}`);
       }
     }
@@ -384,10 +409,14 @@ print(json.dumps(result))
 
   const gridData = JSON.parse(result);
 
-  const startDay = CONFIG.eclipseDay - CONFIG.dayRange;
-  const endDay = CONFIG.eclipseDay + CONFIG.dayRange;
-  const monthNames = ['', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-  const monthName = monthNames[CONFIG.eclipseMonth];
+  // Calculate period string with proper date handling
+  const startDate = new Date(Date.UTC(2020, CONFIG.eclipseMonth - 1, CONFIG.eclipseDay));
+  startDate.setUTCDate(startDate.getUTCDate() - CONFIG.dayRange);
+  const endDate = new Date(Date.UTC(2020, CONFIG.eclipseMonth - 1, CONFIG.eclipseDay));
+  endDate.setUTCDate(endDate.getUTCDate() + CONFIG.dayRange);
+
+  const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  const periodStr = `${monthNames[startDate.getUTCMonth()]} ${startDate.getUTCDate()} - ${monthNames[endDate.getUTCMonth()]} ${endDate.getUTCDate()}`;
 
   // Build output in same structure as eclipse data files
   const cloudData = {
@@ -398,7 +427,7 @@ print(json.dumps(result))
       license: 'Creative Commons Attribution 4.0 International License (CC BY 4.0)',
       fetchedAt: new Date().toISOString(),
       climatology: {
-        period: `${monthName} ${startDay}-${endDay}`,
+        period: periodStr,
         years: `${CONFIG.startYear}-${CONFIG.endYear}`,
         samples: (CONFIG.endYear - CONFIG.startYear + 1) * (CONFIG.dayRange * 2 + 1)
       }
@@ -428,7 +457,7 @@ print(json.dumps(result))
 
   console.log('\n=== Cloud Climatology Summary ===');
   console.log(`Eclipse: ${CONFIG.eclipseYear}-${String(CONFIG.eclipseMonth).padStart(2, '0')}-${String(CONFIG.eclipseDay).padStart(2, '0')}`);
-  console.log(`Period: ${monthName} ${startDay}-${endDay}, ${CONFIG.startYear}-${CONFIG.endYear}`);
+  console.log(`Period: ${periodStr}, ${CONFIG.startYear}-${CONFIG.endYear}`);
   console.log(`Grid: ${gridData.lat.length} x ${gridData.lon.length} (${allValues.length} valid cells)`);
   console.log(`Cloud cover range: ${minCloud.toFixed(1)}% - ${maxCloud.toFixed(1)}%`);
   console.log(`Average: ${avgCloud.toFixed(1)}%`);
@@ -441,6 +470,60 @@ print(json.dumps(result))
  * Main entry point
  */
 async function main() {
+  const args = process.argv.slice(2);
+
+  // Show help
+  if (args.includes('--help') || args.includes('-h')) {
+    console.log(`
+Build Cloud Cover Climatology for Eclipse Path
+
+Usage:
+  node scripts/build-cloud-climatology.js <year>
+
+Arguments:
+  year    Eclipse year (e.g., 2026, 2027). Must have data/eclipse-{year}.json
+
+Environment variables:
+  EUMETSAT_KEY    - API consumer key (required)
+  EUMETSAT_SECRET - API consumer secret (required)
+
+Examples:
+  node scripts/build-cloud-climatology.js 2026
+  node scripts/build-cloud-climatology.js 2027
+
+Output:
+  data/cloud-{year}.json - Cloud climatology for eclipse path
+
+Get EUMETSAT API keys at: https://api.eumetsat.int/api-key/
+
+Attribution: CM SAF/EUMETSAT (CLARA-A3)
+`);
+    process.exit(0);
+  }
+
+  // Parse year argument
+  const yearArg = args.find(arg => /^\d{4}$/.test(arg));
+  if (!yearArg) {
+    console.error('Error: Eclipse year is required');
+    console.error('Usage: node scripts/build-cloud-climatology.js <year>');
+    console.error('Example: node scripts/build-cloud-climatology.js 2027');
+    process.exit(1);
+  }
+
+  const year = parseInt(yearArg);
+
+  // Check if eclipse data file exists
+  const eclipseFile = path.join('data', `eclipse-${year}.json`);
+  if (!fs.existsSync(eclipseFile)) {
+    console.error(`Error: Eclipse data file not found: ${eclipseFile}`);
+    console.error(`Run this first: npm run fetch-${year}`);
+    console.error('Or: node scripts/fetch-eclipse-path.js <nasa-url> > data/eclipse-{year}.json');
+    process.exit(1);
+  }
+
+  // Build configuration from year
+  CONFIG = buildConfig(year);
+
   const key = process.env.EUMETSAT_KEY;
   const secret = process.env.EUMETSAT_SECRET;
 
@@ -450,7 +533,7 @@ async function main() {
     process.exit(1);
   }
 
-  console.error('Building cloud cover climatology for eclipse path...\n');
+  console.error(`Building cloud cover climatology for ${year} eclipse...\n`);
 
   // Ensure output directory exists
   fs.mkdirSync(CONFIG.outputDir, { recursive: true });
@@ -462,9 +545,16 @@ async function main() {
   console.error('\nAuthenticating...');
   const token = await getToken(key, secret);
 
-  const startDay = CONFIG.eclipseDay - CONFIG.dayRange;
-  const endDay = CONFIG.eclipseDay + CONFIG.dayRange;
-  console.error(`\nDownloading daily CFC data (Aug ${startDay}-${endDay}, ${CONFIG.startYear}-${CONFIG.endYear})...`);
+  // Calculate date range for display
+  const startDate = new Date(Date.UTC(2020, CONFIG.eclipseMonth - 1, CONFIG.eclipseDay));
+  startDate.setUTCDate(startDate.getUTCDate() - CONFIG.dayRange);
+  const endDate = new Date(Date.UTC(2020, CONFIG.eclipseMonth - 1, CONFIG.eclipseDay));
+  endDate.setUTCDate(endDate.getUTCDate() + CONFIG.dayRange);
+
+  const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  const startStr = `${monthNames[startDate.getUTCMonth()]} ${startDate.getUTCDate()}`;
+  const endStr = `${monthNames[endDate.getUTCMonth()]} ${endDate.getUTCDate()}`;
+  console.error(`\nDownloading daily CFC data (${startStr} - ${endStr}, ${CONFIG.startYear}-${CONFIG.endYear})...`);
   await downloadAllFiles(token);
 
   // Compute climatology

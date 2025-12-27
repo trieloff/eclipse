@@ -10,10 +10,21 @@
  * Attribution: Eclipse Predictions by Fred Espenak and Chris O'Byrne (NASA's GSFC)
  *
  * Usage:
- *   import { calculateTotality, ECLIPSE_2026_AUG_12 } from './eclipse-calculator.js';
+ *   import { calculateTotality, ECLIPSE_2026_AUG_12, loadEclipseData } from './eclipse-calculator.js';
  *   const result = calculateTotality(43.36, -5.85, ECLIPSE_2026_AUG_12);
  *   console.log(result.start, result.end, result.duration);
+ *
+ *   // Or load dynamically from data file:
+ *   const eclipse2027 = await loadEclipseData(2027);
+ *   const result = calculateTotality(lat, lon, eclipse2027);
  */
+
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Besselian Elements for Total Solar Eclipse of 2026 Aug 12
 // Source: https://eclipse.gsfc.nasa.gov/SEbeselm/SEbeselm2001/SE2026Aug12Tbeselm.html
@@ -43,6 +54,84 @@ export const ECLIPSE_2026_AUG_12 = {
   validFrom: 15.0,
   validTo: 21.0
 };
+
+/**
+ * Load eclipse data from a JSON file
+ * @param {number|string} year - Eclipse year (e.g., 2026, 2027) or path to JSON file
+ * @returns {Promise<Object>} Besselian elements in the format expected by calculateTotality
+ */
+export async function loadEclipseData(year) {
+  let filePath;
+  if (typeof year === 'string' && year.endsWith('.json')) {
+    filePath = year;
+  } else {
+    filePath = path.join(__dirname, '..', 'data', `eclipse-${year}.json`);
+  }
+
+  const data = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+
+  if (!data.besselianElements?.elements) {
+    throw new Error(`No Besselian elements found in ${filePath}`);
+  }
+
+  const el = data.besselianElements.elements;
+
+  // Return in the format expected by calculateTotality
+  return {
+    date: el.date || data.eclipse?.date,
+    t0: el.t0,
+    deltaT: el.deltaT,
+    x: el.x,
+    y: el.y,
+    d: el.d,
+    l1: el.l1,
+    l2: el.l2,
+    mu: el.mu,
+    tanF1: el.tanF1,
+    tanF2: el.tanF2,
+    k1: el.k1,
+    k2: el.k2
+  };
+}
+
+/**
+ * Load eclipse data synchronously from a JSON file
+ * @param {number|string} year - Eclipse year (e.g., 2026, 2027) or path to JSON file
+ * @returns {Object} Besselian elements in the format expected by calculateTotality
+ */
+export function loadEclipseDataSync(year) {
+  let filePath;
+  if (typeof year === 'string' && year.endsWith('.json')) {
+    filePath = year;
+  } else {
+    filePath = path.join(__dirname, '..', 'data', `eclipse-${year}.json`);
+  }
+
+  const data = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+
+  if (!data.besselianElements?.elements) {
+    throw new Error(`No Besselian elements found in ${filePath}`);
+  }
+
+  const el = data.besselianElements.elements;
+
+  // Return in the format expected by calculateTotality
+  return {
+    date: el.date || data.eclipse?.date,
+    t0: el.t0,
+    deltaT: el.deltaT,
+    x: el.x,
+    y: el.y,
+    d: el.d,
+    l1: el.l1,
+    l2: el.l2,
+    mu: el.mu,
+    tanF1: el.tanF1,
+    tanF2: el.tanF2,
+    k1: el.k1,
+    k2: el.k2
+  };
+}
 
 const DEG_TO_RAD = Math.PI / 180;
 const RAD_TO_DEG = 180 / Math.PI;

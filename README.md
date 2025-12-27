@@ -8,8 +8,10 @@ Interactive map of the 2026 total solar eclipse path over Spain.
 
 ## Data Files
 
-- `data/eclipse-2026.json` - Eclipse path and Besselian elements from NASA GSFC
-- `data/cloud-2026.json` - Cloud cover climatology grid from CM SAF/EUMETSAT
+- `data/eclipse-{year}.json` - Eclipse path and Besselian elements from NASA GSFC
+- `data/cloud-{year}.json` - Cloud cover climatology grid from CM SAF/EUMETSAT
+
+Currently available: 2026, 2027
 
 ## Code Structure
 
@@ -37,20 +39,33 @@ npm run dev    # starts on port 3000
 # Fetch 2026 eclipse data
 npm run fetch-2026
 
+# Fetch 2027 eclipse data
+npm run fetch-2027
+
 # Fetch any eclipse (outputs to stdout)
 node scripts/fetch-eclipse-path.js <nasa-url>
 ```
+
+Eclipse path URLs follow the pattern:
+```
+https://eclipse.gsfc.nasa.gov/SEpath/SEpath2001/SE{YYYY}{Mon}{DD}{T|A|H}path.html
+```
+Where T=Total, A=Annular, H=Hybrid. Find eclipse URLs at: https://eclipse.gsfc.nasa.gov/solar.html
 
 ### Cloud Climatology
 
 Requires EUMETSAT API credentials. See `README.local.md` for setup.
 
 ```bash
-# Build cloud climatology for 2026 eclipse
-node scripts/build-cloud-climatology.js
+# Build cloud climatology for any eclipse year
+node scripts/build-cloud-climatology.js <year>
+
+# Examples:
+npm run cloud-2026
+npm run cloud-2027
 ```
 
-Downloads ~400 daily NetCDF files (~2.8GB) and computes Aug 2-22 climatology from 2002-2020.
+Downloads ~400 daily NetCDF files (~2.8GB) and computes climatology around the eclipse date from 2002-2020.
 
 ## Shadowmap Integration
 

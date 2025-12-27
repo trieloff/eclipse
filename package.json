@@ -7,7 +7,10 @@
     "dev": "live-server --port=3000 --open=/index.html --ignorePattern='\\.(json|md|nc|svg)$|node_modules|data/|scripts/'",
     "start": "live-server --port=3000 --ignorePattern='\\.(json|md|nc|svg)$|node_modules|data/|scripts/'",
     "fetch-path": "node scripts/fetch-eclipse-path.js",
-    "fetch-2026": "node scripts/fetch-eclipse-path.js https://eclipse.gsfc.nasa.gov/SEpath/SEpath2001/SE2026Aug12Tpath.html --min-lon -15 --max-lon 10 > data/nasa-path-raw.json"
+    "fetch-2026": "node scripts/fetch-eclipse-path.js https://eclipse.gsfc.nasa.gov/SEpath/SEpath2001/SE2026Aug12Tpath.html > data/eclipse-2026.json",
+    "fetch-2027": "node scripts/fetch-eclipse-path.js https://eclipse.gsfc.nasa.gov/SEpath/SEpath2001/SE2027Aug02Tpath.html > data/eclipse-2027.json",
+    "cloud-2026": "node scripts/build-cloud-climatology.js 2026",
+    "cloud-2027": "node scripts/build-cloud-climatology.js 2027"
   },
   "devDependencies": {
     "live-server": "^1.2.2",
