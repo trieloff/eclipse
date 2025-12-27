@@ -136,3 +136,12 @@ h1 span {
     color: #888;
     margin-top: 0.5rem;
 }
+
+.instructions a {
+    color: #888;
+    text-decoration: none;
+}
+
+.instructions a:hover {
+    color: #f39c12;
+}
