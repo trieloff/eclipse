@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!--
+    HELLO FROM THE PAST (2029+)
+
+    The 2028 eclipse is in the rear-view mirror now.
+    This file is intentionally boring so it survives toolchain churn.
+    If maps are broken, replace the API and keep the data flowing.
+
+    May your skies be clear and your timing precise.
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>2028 Solar Eclipse - New Zealand</title>
+
+    <!-- Region configuration -->
+    <meta name="bounds-north" content="-40">
+    <meta name="bounds-south" content="-50">
+    <meta name="bounds-west" content="164">
+    <meta name="bounds-east" content="180">
+    <meta name="center-lat" content="-45">
+    <meta name="center-lng" content="170">
+    <meta name="default-zoom" content="6">
+    <meta name="data-path" content="..">
+    <meta name="eclipse-year" content="2028">
+
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+    <header>
+        <div class="eclipse-home">
+            <a href="../index.html" title="Home">
+                <div class="sun"></div>
+                <div class="moon"></div>
+                <div class="corona">
+                    <div class="layer layer-1"></div>
+                    <div class="layer layer-2"></div>
+                    <div class="layer layer-3"></div>
+                    <div class="layer layer-4"></div>
+                    <div class="layer layer-5"></div>
+                </div>
+            </a>
+        </div>
+        <h1>Total Solar Eclipse <span>July 22, 2028</span> - New Zealand</h1>
+    </header>
+
+    <div class="container">
+        <div class="map-container">
+            <div id="map"></div>
+        </div>
+
+        <div class="info-panel">
+            <h2>Eclipse Information</h2>
+            <div class="info-content">
+                <div class="info-item" id="location-box" style="cursor: pointer;">
+                    <label id="location-label">Location</label>
+                    <div class="value" id="location-coords">Move cursor over map</div>
+                </div>
+                <div class="info-item">
+                    <label>In Path of Totality</label>
+                    <div class="value" id="in-path">-</div>
+                </div>
+                <div class="info-item">
+                    <label>Estimated Duration</label>
+                    <div class="value highlight" id="duration">-</div>
+                </div>
+                <div class="info-item">
+                    <label id="distance-label">Distance</label>
+                    <div class="value" id="distance">-</div>
+                </div>
+                <div class="info-item">
+                    <label>Links</label>
+                    <div class="value" id="locked-links">-</div>
+                </div>
+            </div>
+
+            <p class="instructions">
+                Data: <a href="https://eclipse.gsfc.nasa.gov/">NASA GSFC</a> · <a href="https://www.cmsaf.eu/">CM SAF/EUMETSAT</a> · <a href="https://github.com/trieloff/eclipse">GitHub</a>
+            </p>
+        </div>
+    </div>
+
+    <script type="module" src="../scripts/main.js"></script>
+
+    <script>
+        window.initMap = () => {
+            if (window.__initMapImpl) {
+                window.__initMapImpl();
+            } else {
+                window.__initMapPending = true;
+            }
+        };
+    </script>
+
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC80WmdKTX5sQVl1_jUEn-oDd17h8XzHqA&libraries=geometry&callback=initMap&loading=async"
+        async
+        defer
+    ></script>
+</body>
+</html>
