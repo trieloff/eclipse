@@ -168,6 +168,10 @@ body:has(.eclipse-home:hover) header {
     display: inline-block;
     width: var(--size);
     height: var(--size);
+    min-width: var(--size);
+    min-height: var(--size);
+    flex-shrink: 0;
+    aspect-ratio: 1;
     cursor: pointer;
 }
 
