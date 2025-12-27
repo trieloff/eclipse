@@ -2,6 +2,13 @@
 
 Interactive map of the 2026 total solar eclipse path over Spain.
 
+**Live:** https://trieloff.github.io/eclipse/
+
+Set your home location to see driving distances:
+```
+https://trieloff.github.io/eclipse/?homeLat=41.68&homeLon=0.85
+```
+
 ## Data Files
 
 - `data/eclipse-2026.json` - Eclipse path and Besselian elements from NASA GSFC

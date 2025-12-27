@@ -2,14 +2,6 @@
   "description": "Points of interest for the 2026-08-12 total solar eclipse",
   "points": [
     {
-      "name": "El Poal",
-      "lat": 41.68,
-      "lon": 0.85,
-      "category": "town",
-      "region": "Catalonia",
-      "notes": "Small town near Lleida"
-    },
-    {
       "name": "Potential Viewing Spot (placeholder)",
       "lat": 41.78,
       "lon": -0.62,
