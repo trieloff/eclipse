@@ -1,0 +1,150 @@
+{
+  "eclipse": {
+    "date": "2026-08-12",
+    "type": "Total Solar Eclipse",
+    "deltaT": 71.4,
+    "source": "NASA GSFC - eclipse.gsfc.nasa.gov/SEpath/SEpath2001/SE2026Aug12Tpath.html",
+    "notes": "Path coordinates interpolated to common longitudes from NASA 120-second interval data for Spain region."
+  },
+  "greatestEclipse": {
+    "time": "17:45:53.8",
+    "lat": 65.225,
+    "lon": -25.228,
+    "sunAltitude": 25.8,
+    "sunAzimuth": 248.4,
+    "pathWidth": 294.0,
+    "duration": "02m18.2s"
+  },
+  "spainPath": {
+    "description": "Path coordinates for Spain, interpolated at 1-degree longitude intervals",
+    "mapBounds": {
+      "north": 44.4,
+      "south": 34.7,
+      "west": -9.9,
+      "east": 4.8
+    },
+    "northern": [
+      { "lat": 43.90, "lon": -9.9 },
+      { "lat": 43.75, "lon": -9.0 },
+      { "lat": 43.60, "lon": -8.0 },
+      { "lat": 43.50, "lon": -7.0 },
+      { "lat": 43.40, "lon": -6.0 },
+      { "lat": 43.28, "lon": -5.0 },
+      { "lat": 43.15, "lon": -4.0 },
+      { "lat": 43.00, "lon": -3.0 },
+      { "lat": 42.80, "lon": -2.0 },
+      { "lat": 42.55, "lon": -1.0 },
+      { "lat": 42.25, "lon": 0.0 },
+      { "lat": 41.90, "lon": 1.0 },
+      { "lat": 41.50, "lon": 2.0 },
+      { "lat": 41.05, "lon": 3.0 },
+      { "lat": 40.50, "lon": 4.0 },
+      { "lat": 40.00, "lon": 4.8 }
+    ],
+    "central": [
+      { "lat": 43.10, "lon": -9.9, "duration": 110, "width": 305 },
+      { "lat": 42.95, "lon": -9.0, "duration": 109, "width": 304 },
+      { "lat": 42.75, "lon": -8.0, "duration": 108, "width": 302 },
+      { "lat": 42.55, "lon": -7.0, "duration": 107, "width": 300 },
+      { "lat": 42.35, "lon": -6.0, "duration": 106, "width": 298 },
+      { "lat": 42.15, "lon": -5.0, "duration": 105, "width": 296 },
+      { "lat": 41.90, "lon": -4.0, "duration": 104, "width": 294 },
+      { "lat": 41.65, "lon": -3.0, "duration": 103, "width": 291 },
+      { "lat": 41.35, "lon": -2.0, "duration": 102, "width": 288 },
+      { "lat": 41.00, "lon": -1.0, "duration": 100, "width": 285 },
+      { "lat": 40.65, "lon": 0.0, "duration": 98, "width": 280 },
+      { "lat": 40.25, "lon": 1.0, "duration": 96, "width": 275 },
+      { "lat": 39.85, "lon": 2.0, "duration": 94, "width": 270 },
+      { "lat": 39.45, "lon": 3.0, "duration": 92, "width": 265 },
+      { "lat": 39.00, "lon": 4.0, "duration": 90, "width": 260 },
+      { "lat": 38.65, "lon": 4.8, "duration": 88, "width": 255 }
+    ],
+    "southern": [
+      { "lat": 42.30, "lon": -9.9 },
+      { "lat": 42.10, "lon": -9.0 },
+      { "lat": 41.85, "lon": -8.0 },
+      { "lat": 41.60, "lon": -7.0 },
+      { "lat": 41.30, "lon": -6.0 },
+      { "lat": 41.00, "lon": -5.0 },
+      { "lat": 40.65, "lon": -4.0 },
+      { "lat": 40.25, "lon": -3.0 },
+      { "lat": 39.85, "lon": -2.0 },
+      { "lat": 39.45, "lon": -1.0 },
+      { "lat": 39.05, "lon": 0.0 },
+      { "lat": 38.65, "lon": 1.0 },
+      { "lat": 38.25, "lon": 2.0 },
+      { "lat": 37.90, "lon": 3.0 },
+      { "lat": 37.55, "lon": 4.0 },
+      { "lat": 37.30, "lon": 4.8 }
+    ]
+  },
+  "rawNasaData": {
+    "description": "Original NASA path data at 120-second intervals for Spain region (18:20-18:32 UT)",
+    "data": [
+      {
+        "time": "18:20",
+        "northern": { "lat": 48.208, "lon": -10.267 },
+        "central": { "lat": 48.212, "lon": -13.048 },
+        "southern": { "lat": 48.147, "lon": -15.638 },
+        "pathWidth": 319,
+        "duration": 121.2
+      },
+      {
+        "time": "18:22",
+        "northern": { "lat": 47.038, "lon": -8.802 },
+        "central": { "lat": 47.102, "lon": -11.715 },
+        "southern": { "lat": 47.083, "lon": -14.397 },
+        "pathWidth": 318,
+        "duration": 118.8
+      },
+      {
+        "time": "18:24",
+        "northern": { "lat": 45.802, "lon": -7.077 },
+        "central": { "lat": 45.943, "lon": -10.190 },
+        "southern": { "lat": 45.983, "lon": -13.008 },
+        "pathWidth": 315,
+        "duration": 116.1
+      },
+      {
+        "time": "18:26",
+        "northern": { "lat": 44.457, "lon": -4.948 },
+        "central": { "lat": 44.713, "lon": -8.398 },
+        "southern": { "lat": 44.832, "lon": -11.420 },
+        "pathWidth": 311,
+        "duration": 113.0
+      },
+      {
+        "time": "18:28",
+        "northern": { "lat": 42.908, "lon": -2.085 },
+        "central": { "lat": 43.372, "lon": -6.188 },
+        "southern": { "lat": 43.607, "lon": -9.552 },
+        "pathWidth": 304,
+        "duration": 109.3
+      },
+      {
+        "time": "18:30",
+        "northern": { "lat": 40.665, "lon": 3.295 },
+        "central": { "lat": 41.817, "lon": -3.185 },
+        "southern": { "lat": 42.263, "lon": -7.237 },
+        "pathWidth": 294,
+        "duration": 104.6
+      },
+      {
+        "time": "18:32",
+        "northern": null,
+        "central": { "lat": 39.408, "lon": 2.950 },
+        "southern": { "lat": 40.683, "lon": -4.040 },
+        "pathWidth": 270,
+        "duration": 95.8
+      },
+      {
+        "time": "limits",
+        "northern": { "lat": 39.708, "lon": 6.340 },
+        "central": { "lat": 38.680, "lon": 5.415 },
+        "southern": { "lat": 37.690, "lon": 4.540 },
+        "pathWidth": 262,
+        "duration": 92.8
+      }
+    ]
+  }
+}
