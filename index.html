@@ -379,12 +379,27 @@
             window.history.replaceState({}, '', newUrl);
         }
 
+        function closestCenterlinePoint(lat, lon, centerline) {
+            let minDist = Infinity;
+            let closest = null;
+            for (const point of centerline) {
+                const pointLon = point.lon ?? point.lng;
+                const dist = haversineDistance(lat, lon, point.lat, pointLon);
+                if (dist < minDist) {
+                    minDist = dist;
+                    closest = point;
+                }
+            }
+            return closest;
+        }
+
         async function initMap() {
             const urlState = readMapStateFromUrl();
+            const urlHome = readHomeFromUrl();
             const map = new google.maps.Map(document.getElementById('map'), {
                 mapTypeId: 'terrain',
                 center: urlState?.center || { lat: 40.3, lng: -3.7 },
-                zoom: urlState?.zoom || 6,
+                zoom: urlState?.zoom || 8,
                 streetViewControl: false,
                 fullscreenControl: false,
                 mapTypeControl: false,
@@ -433,21 +448,12 @@
 
             const directionsService = new google.maps.DirectionsService();
 
-            const bounds = new google.maps.LatLngBounds(
-                { lat: SPAIN_BOUNDS.south, lng: SPAIN_BOUNDS.west },
-                { lat: SPAIN_BOUNDS.north, lng: SPAIN_BOUNDS.east }
-            );
-            if (!urlState) {
-                map.fitBounds(bounds);
-            }
-
             const path = await loadEclipsePath();
             const poiData = await loadPoi();
             const cloudData = await loadCloudData();
             const densifiedPath = densifyPath(path, 20);
 
             // Home location: URL params take priority, then POI with category 'home', then first POI
-            const urlHome = readHomeFromUrl();
             const poiHome = poiData?.points?.find(point => point.category === 'home')
                 || poiData?.points?.[0];
             const homePoi = urlHome || poiHome || null;
@@ -471,6 +477,22 @@
                 lat: entry.central.lat,
                 lng: entry.central.lon
             }));
+
+            // Center map on closest centerline point to home, or fit Spain bounds
+            if (!urlState) {
+                if (hasHome) {
+                    const closest = closestCenterlinePoint(homePoi.lat, homePoi.lon, centerline);
+                    if (closest) {
+                        map.setCenter({ lat: closest.lat, lng: closest.lng });
+                    }
+                } else {
+                    const bounds = new google.maps.LatLngBounds(
+                        { lat: SPAIN_BOUNDS.south, lng: SPAIN_BOUNDS.west },
+                        { lat: SPAIN_BOUNDS.north, lng: SPAIN_BOUNDS.east }
+                    );
+                    map.fitBounds(bounds);
+                }
+            }
 
             const pathPolygon = new google.maps.Polygon({
                 paths: [...northern, ...southern.slice().reverse()],
