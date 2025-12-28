@@ -230,9 +230,12 @@ function updateDurationDisplay(lat, lon, inPath) {
     if (cloudChance === null) {
         durationEl.textContent = formatDuration(result);
     } else {
-        const cloudClass = cloudChance < 30 ? 'cloud-low'
-            : cloudChance < 60 ? 'cloud-mid'
-                : 'cloud-high';
+        const cloudClass = cloudChance < 16 ? 'cloud-0'
+            : cloudChance < 33 ? 'cloud-1'
+                : cloudChance < 50 ? 'cloud-2'
+                    : cloudChance < 66 ? 'cloud-3'
+                        : cloudChance < 83 ? 'cloud-4'
+                            : 'cloud-5';
         durationEl.innerHTML = `${formatDuration(result)} · <span class="${cloudClass}">${cloudChance}% cloud</span>`;
     }
 }

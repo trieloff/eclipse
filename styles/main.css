@@ -119,16 +119,28 @@ h1 span {
     background: rgba(255, 255, 255, 0.12);
 }
 
-.cloud-low {
-    color: #22c55e;
+.cloud-0 {
+    color: #5fb4ff;
 }
 
-.cloud-mid {
-    color: #f59e0b;
+.cloud-1 {
+    color: #79bce8;
 }
 
-.cloud-high {
-    color: #ef4444;
+.cloud-2 {
+    color: #93c0cf;
+}
+
+.cloud-3 {
+    color: #a8b8b5;
+}
+
+.cloud-4 {
+    color: #9a9fa1;
+}
+
+.cloud-5 {
+    color: #7a7f86;
 }
 
 .instructions {
